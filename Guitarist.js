@@ -1,4 +1,4 @@
-// Import Student class
+// Import Musician Class
 const {Musician} = require('./Musician.js');
 
 class Guitarist extends Musician{
