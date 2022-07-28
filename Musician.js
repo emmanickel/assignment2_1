@@ -1,5 +1,18 @@
-
 class Musician{
+
+// Getters and setters for musician instrument:
+    set instument(inst){
+        // Validate instrument is one of the given options
+        if(inst != 'guitarist' | inst != 'bassist' | inst != 'percussionist' | inst != 'flautist')
+            this.mInst = inst;
+        // Give error on invalid input
+        else{
+            console.log('Invalid input. Please enter one of the following (guitarist, bassist, percussionist, flautist): ');
+        }
+    }
+    get instument(){
+        return this.mInst;
+    }
 
 // Getters and setters for musician name:
     set musicianName(name){
@@ -35,16 +48,17 @@ class Musician{
     set hourlyRate(rate){
         // Validate student mark is greater than or equal to 50
         if(rate >= 50){
-            this.hrlyRate = hrlyRate;  
+            this.hrlyRate = rate;  
         }
         // Error on invalid input
         else {
             console.log('Invalid input. Please enter an hourly rate as a number greater than 50.');
         }
     }
-    get studentMarks(){
-        return this.stuMarks;
+    get hourlyRate(){
+        return this.hrlyRate;
     }
+
 }
 
 // Export Student class:
