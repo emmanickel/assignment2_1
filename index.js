@@ -1,10 +1,14 @@
 // Access prompt-sync package for user input:
 const prompt = require('prompt-sync')();
 
-// Call function to operate menu:
+// Call selectFn function to operate main menu:
 selectFn();
 
-// Function to display menu to user and get selection:
+// Function dispMenu displays application main menu to user and takes selection:
+// Input parameters: none
+// Made up of console.log statements
+// Returns user input of function selection as a string e.g. "4"
+
 function dispMenu(){
     console.log("=========================================");
     console.log("|               MusoPlan                |");       
@@ -32,6 +36,14 @@ function dispMenu(){
     let selection = (prompt("Please enter your selection [1, 2, 3, 4, 5, 6, 7, 8, 9]: "));
     return selection;
 }
+
+
+// Function selectFn uses a switch statement inside a while(true) loop to execute
+// the function according to the user's selection
+// The user's selection is taken by calling the dispMenu() function
+// Break and continue statements are used to control the while loop, so that it
+// cycles indefinitely until the user selects option 9
+// Input parameters: none
 
 function selectFn(){
     let fn;
