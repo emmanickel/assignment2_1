@@ -1,6 +1,16 @@
 // Access prompt-sync package for user input:
 const prompt = require('prompt-sync')();
 
+// Import classes:
+const {Guitarist} = require('./Guitarist.js');
+
+// Import functions:
+let regMusician = require('./regMusician.js');
+
+// Create global maps of musicians and troupes:
+const musicians = new Array();
+const troupes = new Array();
+
 // Call selectFn function to operate main menu:
 selectFn();
 
@@ -33,8 +43,7 @@ function dispMenu(){
     console.log("|    given file name                    |");
     console.log("| 9. Exit                               |");
     console.log("|_______________________________________|");
-    let selection = (prompt("Please enter your selection [1, 2, 3, 4, 5, 6, 7, 8, 9]: "));
-    return selection;
+    return prompt("Please enter your selection [1, 2, 3, 4, 5, 6, 7, 8, 9]: ");
 }
 
 
@@ -52,6 +61,8 @@ function selectFn(){
         switch(fn){
             case 1:
                 console.log("You have selected option 1");
+                musicians.push(regMusician.regMusician());
+                console.log(musicians);
                 continue;
             case 2:
                 console.log("You have selected option 2");
@@ -77,7 +88,11 @@ function selectFn(){
             case 9:
                 console.log("Goodbye");
                 break; 
-        }
+            default:
+                console.log("Invalid input");
+                continue;
+            }
         break;
     }
+
 }
