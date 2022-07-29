@@ -62,4 +62,4 @@ class Musician{
 }
 
 // Export Student class:
-module.exports = {Student};
+module.exports = {Musician};
