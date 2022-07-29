@@ -16,8 +16,7 @@ class Troupe{
     
     // Getters and setters for troupe genre:
         set troupeGenre(genre){
-            // Validate musician name is between 3
-            // and 30 characters in length
+            // Validate troupe genre is either rock/jazz/pop
             if(genre == 'rock' | genre == 'jazz' | genre == 'pop'){
                 this.tGenre = genre;
             }
@@ -27,22 +26,37 @@ class Troupe{
             }    
         }
         get troupeGenre(){
-            return this.mName;
+            return this.tGenre;
         }
-    
+
+        // Getters and setters for minimum duration:
         set minDuration(hours){
-            // Validate years playing is greater than or equal to 0
-            if(hours>=0.5 && hours <= 3){
+            // Validate minimum duration is between 0.5 and 3 hrs
+            if(hours>=0.5 && hours <= 3 && isNaN(hours)==false){
                 this.mDur = hours;
             }
             // Error on invalid input
             else {
-                console.log('Invalid input. Please a minimum duration between 0.5 and 3 hours: ');
+                console.log('Invalid input. Please enter minimum duration between 0.5 and 3 hours: ');
             }
         }
         get minDuration(){
             return this.mDur;
         }
+
+        // Set
+        set troupeMembers(newMember){
+            if(this.troupeMembers.length < 5){
+                this.tMembers.push(newMember);
+            }
+            else{
+                console.log('This troupe is full.')
+            }
+        }
+        get troupeMembers(){
+            return this.tMembers;
+        }
+
     }
     
     // Export Troupe class:
