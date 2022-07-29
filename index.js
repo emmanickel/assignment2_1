@@ -1,11 +1,10 @@
 // Access prompt-sync package for user input:
 const prompt = require('prompt-sync')();
 
-// Import classes:
-const {Guitarist} = require('./Guitarist.js');
-
 // Import functions:
 let regMusician = require('./regMusician.js');
+let regTroupe = require('./regTroupe.js');
+let addMusicianTroupe = require('./addMusicianTroupe.js');
 
 // Create global maps of musicians and troupes:
 const musicians = new Array();
@@ -20,6 +19,7 @@ selectFn();
 // Returns user input of function selection as a string e.g. "4"
 
 function dispMenu(){
+    console.clear();
     console.log("=========================================");
     console.log("|               MusoPlan                |");       
     console.log("|=======================================|");
@@ -60,24 +60,31 @@ function selectFn(){
         fn = parseInt(dispMenu());
         switch(fn){
             case 1:
-                console.log("You have selected option 1");
+                console.log("You have selected to register a musician.");
                 musicians.push(regMusician.regMusician());
                 console.log(musicians);
+                prompt("Press any key to continue.");
                 continue;
             case 2:
-                console.log("You have selected option 2");
+                console.log("You have selected to register a troupe.");
+                troupes.push(regTroupe.regTroupe());
+                console.log("You have successfully created a troupe.");
+                console.log(troupes);
+                prompt("Press any key to continue.");
                 continue;
             case 3:
-                console.log("You have selected option 3");
+                console.log("You have selected to add a musician to a troupe.");
+                addMusicianTroupe.addMusicianTroupe(musicians, troupes);
+                console.log(troupes);
                 continue;
             case 4:
-                console.log("You have selected option 4");
+                console.log("You have selected to provide a summary description of a troupe.");
                 continue;
             case 5:
-                console.log("You have selected option 5");
+                console.log("You have selected to provide a detailed description of a troupe.");
                 continue;
             case 6:
-                console.log("You have selected option 6");
+                console.log("You have selected to calculate the cost of depolying the troupe for a number of hours");
                 continue;
             case 7:
                 console.log("You have selected option 7");
@@ -93,6 +100,7 @@ function selectFn(){
                 continue;
             }
         break;
+
     }
 
 }
