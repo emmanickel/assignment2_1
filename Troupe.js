@@ -48,6 +48,7 @@ class Troupe{
         }
 
         calHrlyRate(){
+            
             let sum = 0;
             for(let i = 0; i<this.tMembers.length; i++){
                 sum += parseInt(this.tMembers[i].hrlyRate);
@@ -55,11 +56,8 @@ class Troupe{
             return sum;
         }
 
-        calDepCost(){
-            
-        }
 }
 
     
-    // Export Troupe class:
-    module.exports = {Troupe};
+// Export Troupe class:
+module.exports = {Troupe};
