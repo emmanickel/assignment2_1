@@ -7,6 +7,8 @@ let regTroupe = require('./regTroupe.js');
 let addMusicianTroupe = require('./addMusicianTroupe.js');
 let giveDescriptions = require('./giveDescriptions.js');
 let readTroupeNames = require('./readTroupeNames.js');
+let writeToFile = require('./writeToFile.js');
+let calDepCost = require('./calDepCost.js');
 
 
 // Import classes
@@ -61,7 +63,7 @@ function dispMenu(){
     console.log("|    populated from a file              |");
     console.log("| 8. Write a list of the detailed       |");
     console.log("|    descriptions for all troupes to    |");
-    console.log("|    given file name                    |");
+    console.log("|    a given file name                  |");
     console.log("| 9. Exit                               |");
     console.log("|_______________________________________|");
     return prompt("Please enter your selection [1, 2, 3, 4, 5, 6, 7, 8, 9]: ");
@@ -102,31 +104,37 @@ function selectFn(){
                 continue;
             case 4:
                 console.log("You have selected to provide a summary description of a troupe.");
+                // Get troupe name (by index)
+                index = giveDescriptions.getTroupeName(troupes);
                 // Give title
                 console.log(`\nSummary Description`);
                 console.log(`====================`);
-                giveDescriptions.giveSummaryDesc(troupes, false);
+                console.log(giveDescriptions.giveSummaryDesc(troupes, false, index));
                 prompt("Press any key to continue.");
                 continue;
             case 5:
                 console.log("You have selected to provide a detailed description of a troupe.");
+                // Get troupe name (by index)
+                index = giveDescriptions.getTroupeName(troupes);
                 // Give title
                 console.log(`\nDetailed Description`);
                 console.log(`====================`);
-                giveDescriptions.giveDetailedDesc(troupes);
+                console.log(giveDescriptions.giveSummaryDesc(troupes, true, index));
                 prompt("Press any key to continue.");
                 continue;
             case 6:
-                console.log("You have selected to calculate the cost of depolying the troupe for a number of hours");
+                console.log("You have selected to calculate the cost of deploying the troupe for a number of hours");
+                calDepCost.calDepCost(troupes);
                 prompt("Press any key to continue.");
                 continue;
             case 7:
-                console.log("You have selected option 7");
+                console.log("You have selected to read a list of troupe names to be populated from a file.");
                 readTroupeNames.readTroupeNames(troupes);
                 prompt("Press any key to continue.");
                 continue;
             case 8:
-                console.log("You have selected option 8");
+                console.log("You have selected to write a list of the detailed descriptions for all troupes to a given file name.");
+                writeToFile.writeFileDesc(troupes);
                 prompt("Press any key to continue.");
                 continue;
             case 9:
