@@ -10,8 +10,7 @@ class Percussionist extends Musician{
 // to the instrumentalist
  // It has no input parameters
     giveInterestingFact(){
-        console.log("Me drum");
-        return;
+        return "Interesting fact: Me drum\n\n";
     }
 }
 
