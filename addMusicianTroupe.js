@@ -59,7 +59,6 @@ function addMusicianTroupe(musicians, troupes)
                         if(troupes[z].tMembers.length <5 ){
                             troupes[z].tMembers.push(musicians[i]);
                             return [i, z];
-                            // `Successfully added ${musicians[i].mName} to ${troupes[z].tName}. \nCurrent members of ${troupes[z].tName} are ${troupes[z].tMembers.mName}`;
                         }
                         else{
                             console.log("This troupe is full. Please select another troupe.");
@@ -76,26 +75,13 @@ function addMusicianTroupe(musicians, troupes)
 
     }
 
-    // Get troupe name:
-    // let tName = prompt("Please select a troupe: ");
-    // // Show user available troupe names:
-    // for(let i = 0; i < troupes.length; i++){
-    //     console.log(troupes[i].tName);
-    //     if(tName == troupes[i].tName){
-    //         console.log(`You have selected the troupe: ${troupes[i].tName}.`);
-    //         troupes[i].troupeMembers = mName;
-    //         break;
-    //     }
-    // }
-
- 
 }
 }
 
 function dispTroupeMembers(musicians, troupes){
     let index = addMusicianTroupe(musicians, troupes);
-    console.log(index);
-    console.log(`Successfully added ${musicians[index[0]].mName} to ${troupes[index[1]].tName}`);
+    // console.log(index);
+    console.log(`Successfully added ${musicians[index[0]].mName} to ${troupes[index[1]].tName}.`);
     console.log(`The current members of ${troupes[index[1]].tName} are:`);
     for(let i = 0; i<troupes[index[1]].tMembers.length; i++){
         console.log(`\t- ${troupes[index[1]].tMembers[i].mName}`);
