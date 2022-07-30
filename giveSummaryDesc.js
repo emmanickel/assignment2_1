@@ -24,22 +24,23 @@ function giveSummaryDesc(troupes){
         // Find troupe in array troupes:
         for(i = 0; i < troupes.length; i++){
             if(tName == troupes[i].tName){
-                break;
+                console.log(`Troupe name: ${troupes[i].tName}`);
+                // For loop to display troupe members:
+                console.log(`Members: `);
+                    for(let x = 0; x < troupes[i].tMembers.length; x++){
+                        console.log(`\t- ${troupes[i].tMembers[x].mName}`);
+                    }
+                console.log(`Genre: ${troupes[i].tGenre}`);
+                console.log(`Minimum duration: ${troupes[i].mDur}`);
+                // Calculate hourly rate... make into property of troupe?
+                console.log(`Hourly rate: ${troupes[i].hrlyRate}`);
+                return;
             }
+            // If troupe name doesn't exist give error
             console.log("Invalid selection.")
         }
-
-        // If troupe name doesn't exist give error
-
-        console.log(`Troupe name: ${troupes[i].tName}`);
-        // Need for loop - write function for troupe members:
-        // console.log(`Members: ${troupes[i].tName.tMembers}`);
-        console.log(`Genre: ${troupes[i].tGenre}`);
-        console.log(`Minimum duration: ${troupes[i].mDur}`);
-        // Calculate hourly rate... make into property of troupe?
-        // console.log(`Hourly rate: ${troupes[i].hr}`);
+    }
     }
 
-}
 
 module.exports = {giveSummaryDesc}
