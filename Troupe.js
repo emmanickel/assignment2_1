@@ -1,4 +1,7 @@
 class Troupe{
+    constructor(){
+        this.tMembers = [];
+    }
 
     // Getters and setters for troupe name:
         set troupeName(name){
@@ -45,17 +48,17 @@ class Troupe{
         }
 
         // Set
-        set troupeMembers(newMember){
-            if(this.troupeMembers.length < 5){
-                this.tMembers.push(newMember);
-            }
-            else{
-                console.log('This troupe is full.')
-            }
-        }
-        get troupeMembers(){
-            return this.tMembers;
-        }
+        // set troupeMembers(newMember){
+        //     if(this.tMembers.length < 5){
+        //         this.tMembers.push(newMember);
+        //     }
+        //     else{
+        //         console.log('This troupe is full.')
+        //     }
+        // }
+        // get troupeMembers(){
+        //     return this.tMembers;
+        // }
 
     }
     
