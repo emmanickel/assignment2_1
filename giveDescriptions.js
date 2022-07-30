@@ -8,7 +8,7 @@ const {Troupe} = require('./Troupe');
 // Access prompt-sync package for user input:
 const prompt = require('prompt-sync')();
 
-function giveSummaryDesc(troupes){
+function giveSummaryDesc(troupes, detailed){
     // Declare index variable
     let i;
 
@@ -40,7 +40,11 @@ function giveSummaryDesc(troupes){
                 console.log(`Minimum duration: ${troupes[i].mDur} hours`);
                 // Access troupe hourly rate by calling calHrlyRate function from Troupe class:
                 console.log(`Hourly rate: $${parseInt(Troupe.prototype.calHrlyRate.call(troupes[i]))}/hr`);
-                return;
+                if(detailed == true){
+                    return i;
+                }
+                else return;
+
             }
         }
             // If troupe name doesn't exist, give error:
@@ -48,4 +52,23 @@ function giveSummaryDesc(troupes){
     }
     }
 
-module.exports = {giveSummaryDesc}
+function giveDetailedDesc(troupes){
+    let i = giveSummaryDesc(troupes, true);
+    // Introduce each musician:
+    for(let x=0; x<troupes[i].tMembers.length; x++){
+        console.log(troupes[i].tMembers[x]);
+        console.log(`Name: ${troupes[i].tMembers[x].mName}`);
+        console.log(`Instrument: ${troupes[i].tMembers[x].mInst}`);
+        console.log(`Years playing: ${troupes[i].tMembers[x].yrsPlaying}`);
+        console.log(`Hourly rate: ${troupes[i].tMembers[x].hrlyRate}`);
+        // Get interesting fact depending on instrument
+        console.log(`Interesting fact: ${Musician.prototype.giveInterestingFact.call(troupes[i].tMembers[x].mInst)}`);
+    }
+    // Get interesting fact depending on instrument
+    // console.log(troupes[i].tMember);
+    // console.log(Musician.prototype.giveInterestingFact.call(troupes[i].t));
+
+}
+
+
+module.exports = {giveSummaryDesc, giveDetailedDesc}
