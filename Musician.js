@@ -60,7 +60,7 @@ class Musician{
     }
 
     giveInterestingFact(){
-        return this.mInst;
+        // return this.mInst;
         console.log("Need to be an instrumentalist");
         console.log(this.mInst);
         switch(this.mInst){
