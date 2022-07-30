@@ -47,20 +47,19 @@ class Troupe{
             return this.mDur;
         }
 
-        // Set
-        // set troupeMembers(newMember){
-        //     if(this.tMembers.length < 5){
-        //         this.tMembers.push(newMember);
-        //     }
-        //     else{
-        //         console.log('This troupe is full.')
-        //     }
-        // }
-        // get troupeMembers(){
-        //     return this.tMembers;
-        // }
+        calHrlyRate(){
+            let sum = 0;
+            for(let i = 0; i<this.tMembers.length; i++){
+                sum += parseInt(this.tMembers[i].hrlyRate);
+            }
+            return sum;
+        }
 
-    }
+        calDepCost(){
+            
+        }
+}
+
     
     // Export Troupe class:
     module.exports = {Troupe};
