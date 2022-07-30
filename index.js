@@ -10,6 +10,20 @@ let addMusicianTroupe = require('./addMusicianTroupe.js');
 const musicians = new Array();
 const troupes = new Array();
 
+// Create some musicians
+musicians.push({mInst: 'guitarist', mName: 'emma', yrsPlaying: '8', hrlyRate: '55'});
+musicians.push({mInst: 'bassist', mName: 'lewis', yrsPlaying: '2', hrlyRate: '70'});
+musicians.push({mInst: 'flautist', mName: 'zac', yrsPlaying: '10', hrlyRate: '55'});
+musicians.push({mInst: 'percussionist',mName: 'georgia', yrsPlaying: '3', hrlyRate: '80'});
+musicians.push({mInst: 'guitarist', mName: 'jazz', yrsPlaying: '1', hrlyRate: '95'});
+musicians.push({mInst: 'bassist', mName: 'jill', yrsPlaying: '7', hrlyRate: '60'});
+
+// Create some troupes
+troupes.push({tMembers: [], tName: 'sitting down', mDur: '2', tGenre: 'jazz'});
+troupes.push({tMembers: [], tName: 'the strokes', mDur: '3', tGenre: 'rock'});
+
+// const troupeMembers = new Array();
+
 // Call selectFn function to operate main menu:
 selectFn();
 
@@ -62,6 +76,7 @@ function selectFn(){
             case 1:
                 console.log("You have selected to register a musician.");
                 musicians.push(regMusician.regMusician());
+                console.log("You have successfully created a musician.");
                 console.log(musicians);
                 prompt("Press any key to continue.");
                 continue;
@@ -74,8 +89,10 @@ function selectFn(){
                 continue;
             case 3:
                 console.log("You have selected to add a musician to a troupe.");
-                addMusicianTroupe.addMusicianTroupe(musicians, troupes);
+                addMusicianTroupe.dispTroupeMembers(musicians, troupes);
+                // console.log(addMusicianTroupe.addMusicianTroupe(musicians, troupes));
                 console.log(troupes);
+                prompt("Press any key to continue.");
                 continue;
             case 4:
                 console.log("You have selected to provide a summary description of a troupe.");
