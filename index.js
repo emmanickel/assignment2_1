@@ -5,6 +5,11 @@ const prompt = require('prompt-sync')();
 let regMusician = require('./regMusician.js');
 let regTroupe = require('./regTroupe.js');
 let addMusicianTroupe = require('./addMusicianTroupe.js');
+let giveSummaryDesc = require('./giveSummaryDesc.js');
+
+// Import classes
+const { Troupe } = require('./Troupe.js');
+const { Musician } = require('./Musician.js');
 
 // Create global maps of musicians and troupes:
 const musicians = new Array();
@@ -77,43 +82,48 @@ function selectFn(){
                 console.log("You have selected to register a musician.");
                 musicians.push(regMusician.regMusician());
                 console.log("You have successfully created a musician.");
-                console.log(musicians);
+                // console.log(musicians);
                 prompt("Press any key to continue.");
                 continue;
             case 2:
                 console.log("You have selected to register a troupe.");
                 troupes.push(regTroupe.regTroupe());
                 console.log("You have successfully created a troupe.");
-                console.log(troupes);
+                // console.log(troupes);
                 prompt("Press any key to continue.");
                 continue;
             case 3:
                 console.log("You have selected to add a musician to a troupe.");
                 addMusicianTroupe.dispTroupeMembers(musicians, troupes);
-                // console.log(addMusicianTroupe.addMusicianTroupe(musicians, troupes));
-                console.log(troupes);
+                // console.log(troupes);
                 prompt("Press any key to continue.");
                 continue;
             case 4:
                 console.log("You have selected to provide a summary description of a troupe.");
+                giveSummaryDesc.giveSummaryDesc(troupes);
+                prompt("Press any key to continue.");
                 continue;
             case 5:
                 console.log("You have selected to provide a detailed description of a troupe.");
+                prompt("Press any key to continue.");
                 continue;
             case 6:
                 console.log("You have selected to calculate the cost of depolying the troupe for a number of hours");
+                prompt("Press any key to continue.");
                 continue;
             case 7:
                 console.log("You have selected option 7");
                 continue;
             case 8:
                 console.log("You have selected option 8");
+                prompt("Press any key to continue.");
                 continue;
             case 9:
                 console.log("Goodbye");
                 break; 
             default:
                 console.log("Invalid input");
+                prompt("Press any key to continue.");
                 continue;
             }
         break;
