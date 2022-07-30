@@ -10,8 +10,7 @@ class Flautist extends Musician{
     // to the instrumentalist
     // It has no input parameters
     giveInterestingFact(){
-        console.log("1989 heavy metal instrument of the year");
-        return;
+        return "Interesting fact: 1989 heavy metal instrument of the year\n\n";
     }
 }
 
