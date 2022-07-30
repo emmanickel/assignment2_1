@@ -61,8 +61,23 @@ function giveDetailedDesc(troupes){
         console.log(`Instrument: ${troupes[i].tMembers[x].mInst}`);
         console.log(`Years playing: ${troupes[i].tMembers[x].yrsPlaying}`);
         console.log(`Hourly rate: ${troupes[i].tMembers[x].hrlyRate}`);
+        // console.log(`Interesting fact: ${troupes[i].tMembers[x].toUpperCase().prototype.giveInterestingFact.call(troupes[i].tMembers[x])}`);
+
         // Get interesting fact depending on instrument
-        console.log(`Interesting fact: ${Musician.prototype.giveInterestingFact.call(troupes[i].tMembers[x].mInst)}`);
+        switch(troupes[i].tMembers[x].mInst){
+            case 'guitarist':
+                return Guitarist.prototype.giveInterestingFact.call(troupes[i].tMembers[x]);
+            case 'bassist':
+                return Bassist.prototype.giveInterestingFact.call(troupes[i].tMembers[x]);
+            case 'percussionist':
+                return Percussionist.prototype.giveInterestingFact.call(troupes[i].tMembers[x]);
+            case 'flautist':
+                return Flautist.prototype.giveInterestingFact.call(troupes[i].tMembers[x]);
+            default:
+                console.log("Instrument unknown");
+                return;
+        }
+        // console.log(`Interesting fact: ${Musician.prototype.giveInterestingFact.call(troupes[i].tMembers[x])}`);
     }
     // Get interesting fact depending on instrument
     // console.log(troupes[i].tMember);
