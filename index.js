@@ -5,7 +5,9 @@ const prompt = require('prompt-sync')();
 let regMusician = require('./regMusician.js');
 let regTroupe = require('./regTroupe.js');
 let addMusicianTroupe = require('./addMusicianTroupe.js');
-let giveSummaryDesc = require('./giveSummaryDesc.js');
+let giveDescriptions = require('./giveDescriptions.js');
+let readTroupeNames = require('./readTroupeNames.js');
+
 
 // Import classes
 const { Troupe } = require('./Troupe.js');
@@ -100,11 +102,18 @@ function selectFn(){
                 continue;
             case 4:
                 console.log("You have selected to provide a summary description of a troupe.");
-                giveSummaryDesc.giveSummaryDesc(troupes);
+                // Give title
+                console.log(`\nSummary Description`);
+                console.log(`====================`);
+                giveDescriptions.giveSummaryDesc(troupes, false);
                 prompt("Press any key to continue.");
                 continue;
             case 5:
                 console.log("You have selected to provide a detailed description of a troupe.");
+                // Give title
+                console.log(`\nDetailed Description`);
+                console.log(`====================`);
+                giveDescriptions.giveDetailedDesc(troupes);
                 prompt("Press any key to continue.");
                 continue;
             case 6:
@@ -113,6 +122,8 @@ function selectFn(){
                 continue;
             case 7:
                 console.log("You have selected option 7");
+                readTroupeNames.readTroupeNames(troupes);
+                prompt("Press any key to continue.");
                 continue;
             case 8:
                 console.log("You have selected option 8");
