@@ -10,8 +10,7 @@ class Guitarist extends Musician{
     // to the instrumentalist
     // It has no input parameters
     giveInterestingFact(){
-        console.log("The more strings you have, the better you are");
-        return;
+        return "Interesting fact: The more strings you have, the better you are\n\n";
     }
 }
 
