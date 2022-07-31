@@ -5,7 +5,7 @@ class Troupe{
 
     // Getters and setters for troupe name:
         set troupeName(name){
-            // Validate instrument is one of the given options
+            // Validate troupe name is between 3 and 30 characters
             if(name.length >= 3 && name.length <= 30)
                 this.tName = name;
             // Give error on invalid input
@@ -48,7 +48,6 @@ class Troupe{
         }
 
         calHrlyRate(){
-            
             let sum = 0;
             for(let i = 0; i<this.tMembers.length; i++){
                 sum += parseInt(this.tMembers[i].hrlyRate);
