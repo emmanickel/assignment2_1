@@ -1,27 +1,36 @@
+// Import classes:
 const { Guitarist } = require('./Guitarist');
 const { Bassist } = require('./Bassist');
 const { Percussionist } = require('./Percussionist');
 const { Flautist } = require('./Flautist');
-const { Musician } = require('./Musician');
 
 // Access prompt-sync package for user input:
 const prompt = require('prompt-sync')();
 
-
+// Function regMusician creates a musician by first taking user selection of
+// whether the musician is an guitarist, bassist, percussionist or flautist
+// It then takes user input to record their name, years playing and hourly rate
+// Accepted parameters: 
+    // instrument must be either: guitarist/bassist/percussionist/flautist
+    // name must be: between 3 and 30 characters (including)
+    // years playing must be: a non-negative number
+    // hourly rate must be: a number greater than (or equal to) 50
+// Returns the Musician object that has been created
 function regMusician()
 {
     // While loop takes user input to select musician's instrument
     while(true){
         // Take user input to select an instrument:
-        instrument = prompt("Please select an instrument (guitarist/bassist/percussionist/flautist): ").toLowerCase();
-        // Switch statement validates that user has input a valid instrument
-        // If the instrument is valid, a new instrumentalist is created
-        // Either a guitarist, bassist, percussionist or flautist
+        // toLowerCase() means input is not case-sensitive 
+        instrument = prompt("Please choose a type of instrumentalist (guitarist/bassist/percussionist/flautist): ").trim().toLowerCase();
+        
+        // Switch statement validates that the user has input a valid instrumentalist type
+        // If the input is valid, objects of that instrumentalist class are created
+        // the instrument property is then set for that object too
         switch(instrument){
             case 'guitarist':
                 musi = new Guitarist();
                 musi.instument = instrument;
-                // console.log(musi);
                 break;
             case 'bassist':
                 musi = new Bassist();
@@ -36,50 +45,51 @@ function regMusician()
                 musi.instument = instrument;
                 break;
             default:
-                // If the input is invalid, an error is thrown and the while loop continues, allowing the user to re-enter input 
+                // If the input is invalid, an error is thrown and the while loop
+                // continues, allowing the user to re-enter input 
                 console.log("Invalid input.");
                 continue;
         }
         break;
     }
 
-    // Declare properties for Musician object:
+    // Declare variables such that they are defined but invalid:
     let m_name = "";
     let yrs_playing = -1;
     let m_rate = 0;
-    let flag1 = 0;
-    let flag2 = 0;
-    let flag3 = 0;
 
-    // // While loop for user input of Musician data:
+    // While loop takes user input of the musicians name, years playing and hourly rate:
     while(true){
-        // If statements validate that input value meets required conditions 
+        // If statements validate that input value meets required conditions
+        // Name must be between 3 and 30 characters long: 
         if(m_name.length >= 3 && m_name.length <=30){
             musi.musicianName = m_name;
-            if(yrs_playing >= 0 && typeof(parseFloat(yrs_playing))=="number"){
+            // Years playing must be a non negative number:
+            if(yrs_playing >= 0 && !isNaN(yrs_playing)){
                 musi.yearsPlaying = yrs_playing;
-                if(m_rate>=50 && typeof(parseFloat(m_rate))=="number"){
+                // Hourly rate must be a number greater than 50:
+                if(m_rate>=50 && !isNaN(m_rate)){
                     musi.hourlyRate = m_rate;
                     // Break while loop once all conditions have been met
                     break;
                 }
                 // Else statements prompt user to enter input
+                // trim() removes white space from input
                 else{
-                    m_rate = prompt("Enter the musician's hourly rate: ");
+                    m_rate = prompt("Enter the musician's hourly rate: ").trim();
                     musi.hourlyRate = m_rate;
                 }
             }
             else{
-                yrs_playing = prompt("Enter the number of years the musician has been playing: ");
+                yrs_playing = prompt("Enter the number of years the musician has been playing: ").trim();
                 musi.yearsPlaying = yrs_playing;
             }
         }
         else{
-            m_name = prompt("Enter the musician's name: ");
+            m_name = prompt("Enter the musician's name: ").trim();
             musi.musicianName = m_name;
         }
     }
-
     return(musi);
 }
 
