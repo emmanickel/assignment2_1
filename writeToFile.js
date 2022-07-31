@@ -18,23 +18,13 @@ function writeFileDesc(troupes){
     let fileName = prompt("Please enter a file name: ");
     let description = '';
 
-    // For loop writes detailed description of each troupe to the file
+    // For loop concatenated description string with detailed description of each troupe:
     for(let i = 0; i < troupes.length; i ++){
         description = description.concat(giveDescriptions.giveSummaryDesc(troupes, true, i));
     }
 
-
     // Write to a file:
     fs.writeFileSync(`${fileName}.txt`, description, 'utf8');
-
-    // Other way of writing to a file:
-    // writeMessage = "hello"
-
-
-    // Write to file
-    // fs.appendFileSync(`${fileName}.txt`, writeMessage, function(err){
-    // })
-
     return;
 }
 
