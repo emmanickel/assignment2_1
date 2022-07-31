@@ -21,6 +21,14 @@ const musicians = new Array();
 const troupes = new Array();
 
 //===========================================================================
+// Questions to ask on Monday:
+// - Can names (of musicians and troupes) be numbers?
+//     - isNaN(musicians[i].mName)
+//     - isNaN(troupes[i].tName)
+// - When there are no members of a troupe, should we still print the summary
+// and detailed description?
+// - Allow create a second musician/troupe with the same name?
+//===========================================================================
 // FOR TESTING:
 // Create some musicians:
 let g1 = new Guitarist()
@@ -51,19 +59,6 @@ f1.yrsPlaying = '9';
 f1.hrlyRate = '95';
 musicians.push(f1);
 
-// let f1 = new Flautist({mInst: 'flautist', mName: 'zac', yrsPlaying: '10', hrlyRate: '55'});
-// musicians.push(f1);
-
-// let p1 = new Percussionist({mInst: 'percussionist',mName: 'georgia', yrsPlaying: '3', hrlyRate: '80'});
-// musicians.push(p1);
-
-// musicians.push({mInst: 'guitarist', mName: 'emma', yrsPlaying: '8', hrlyRate: '55'});
-// musicians.push({mInst: 'bassist', mName: 'lewis', yrsPlaying: '2', hrlyRate: '70'});
-// musicians.push({mInst: 'flautist', mName: 'zac', yrsPlaying: '10', hrlyRate: '55'});
-// musicians.push({mInst: 'percussionist',mName: 'georgia', yrsPlaying: '3', hrlyRate: '80'});
-// musicians.push({mInst: 'guitarist', mName: 'jazz', yrsPlaying: '1', hrlyRate: '95'});
-// musicians.push({mInst: 'bassist', mName: 'jill', yrsPlaying: '7', hrlyRate: '60'});
-
 // Create some troupes:
 let t1 = new Troupe()
 t1.tMembers = [];
@@ -78,9 +73,6 @@ t2.tName = "the strokes";
 t2.mDur = '3';
 t2.tGenre = 'rock';
 troupes.push(t2);
-
-// troupes.push({tMembers: [], tName: 'sitting down', mDur: '2', tGenre: 'jazz'});
-// troupes.push({tMembers: [], tName: 'the strokes', mDur: '3', tGenre: 'rock'});
 //===========================================================================
 
 // Call selectFn function to operate main menu:
