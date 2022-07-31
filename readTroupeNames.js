@@ -4,9 +4,10 @@ const prompt = require('prompt-sync')();
 // Access fs package for reading/writing to files:
 const fs = require('fs');
 
-// readTroupeNames function reads the troupe names given in a text file
+// Function readTroupeNames reads the troupe names given in a text file
 // and creates troupes with the given names
 // Accepted parameters = array containing all current Troupe objects (to be added to)
+// No return values
 function readTroupeNames(troupes){
     // Prompt the user to enter the filename (no extension required):
     let fileName = prompt("Please enter a file name to read (without the file extension): ");
