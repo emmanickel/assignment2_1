@@ -1,19 +1,14 @@
-const { Guitarist } = require('./Guitarist');
-const { Bassist } = require('./Bassist');
-const { Percussionist } = require('./Percussionist');
-const { Flautist } = require('./Flautist');
-const { Musician } = require('./Musician');
+// Import classes:
 const {Troupe} = require('./Troupe');
 
 // Access prompt-sync package for user input:
 const prompt = require('prompt-sync')();
 
+
 function calDepCost(troupes){
-            
     // Access prompt-sync package for user input:
     const prompt = require('prompt-sync')();
     let i;
-    let sumCost;
 
     while(true){
     // Give list of troupe names:
@@ -28,11 +23,18 @@ function calDepCost(troupes){
     // Check given musician name is valid:
     for(i = 0; i < troupes.length; i++){
         if(tName == troupes[i].tName){
-            // Get number of hours from user:
-            // ADD IN CONDITION TO CHECK MINIMUM DURATION
-            hours = prompt(`Please enter the number of hours to deploy ${troupes[i].tName} for: `);
-            console.log( `Cost of deployment of ${troupes[i].tName} for ${hours} hours is: $${hours*Troupe.prototype.calHrlyRate.call(troupes[i])}.`);
-            return;
+            while(true){
+                // Get number of hours from user:
+                hours = prompt(`Please enter the number of hours to deploy ${troupes[i].tName} for: `);
+                // If condition confirms given number of hours is greater than or equal to minimum but less than or equal to 3:
+                if(hours >= troupes[i].mDur&& hours <= 3){
+                    console.log( `Cost of deployment of ${troupes[i].tName} for ${hours} hours is: $${hours*Troupe.prototype.calHrlyRate.call(troupes[i])}.\n`);
+                    return;
+                }
+                else{
+                    console.log(`Invalid number of hours. Please give a number of hours between ${troupes[i].mDur} and 3.`)
+                }
+            }
         }
     }
 
