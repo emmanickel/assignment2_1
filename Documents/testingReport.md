@@ -36,12 +36,13 @@
 
 <br>
 
-## Results of Unit Testing
+## Test Case 1: Create Musician
 
-| Unit test case | User requirement being tested | Inputs required to test functionality | Expected outcome of test | Actual outcome of test | Modifications required |
-|---|---|---|---|---|---|
-| 1 | Create musician? | `'1'` <br> `'guitarist'` <br> `'Emma'` <br> `'4'` <br> `'70'` <br> | | | |
-| 2 | Create troupe? | | | | |
-| 3 | Add musician to troupe? | | | | |
-| 4 | | | | | |
-| 5 | Provide a detailed description of a troupe | | | | |
+| Input | Expected output | Actual Output | Modifications required |
+|---|---|---|---|
+| `'1'` <br> `->'guitarist'` <br> `->'Emma'` <br> `->'4'` <br> `->'70'` <br> | | | |
+| | | | |
+| | | | |
+| | | | |
+
+**Modifications Required:**
