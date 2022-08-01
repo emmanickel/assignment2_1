@@ -25,7 +25,7 @@ function writeFileDesc(troupes){
 
     // Write to a file:
     fs.writeFileSync(`${fileName}.txt`, description, 'utf8');
-    return;
+    return fileName;
 }
 
 module.exports = {writeFileDesc}
