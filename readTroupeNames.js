@@ -9,12 +9,22 @@ const fs = require('fs');
 // Accepted parameters = array containing all current Troupe objects (to be added to)
 // No return values
 function readTroupeNames(troupes){
+    let troupeNames;
+    let fileName;
+    while(true){
     // Prompt the user to enter the filename (no extension required):
-    let fileName = prompt("Please enter a file name to read (without the file extension): ");
-
+    fileName = prompt("Please enter a file name to read (without the file extension): ");
+    // let troupeNames;
     // Read text file of given name using readFileSync():
-    const troupeNames = fs.readFileSync(`${fileName}.txt`, 'utf8');
-
+    
+    try{
+        troupeNames = fs.readFileSync(`${fileName}.txt`, 'utf8');
+        break;
+    }
+    catch{
+        console.log("File name does not exist.");
+    }
+}
     // Store each line as a value inside the array troupeList:
     const troupeList = troupeNames.split("\r\n");
 
