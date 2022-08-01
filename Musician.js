@@ -7,7 +7,7 @@ class Musician{
             this.mInst = inst;
         // Give error on invalid input
         else{
-            console.log('Invalid input. Please enter one of the following (guitarist, bassist, percussionist, flautist): ');
+            console.log('Invalid input. Instrument must be either guitarist, bassist, percussionist or flautist.');
         }
     }
     get instument(){
@@ -23,7 +23,7 @@ class Musician{
         }
         // Error on invalid input
         else {
-            console.log('Invalid input. Please musician name between 3 and 30 characters.');
+            console.log('Invalid input. Musician name must be between 3 and 30 characters.');
         }    
     }
     get musicianName(){
@@ -37,7 +37,7 @@ class Musician{
         }
         // Error on invalid input
         else {
-            console.log('Invalid input. Please years playing as a non-negative integer.');
+            console.log('Invalid input. Years playing must be a non-negative integer.');
         }
     }
     get yearsPlaying(){
