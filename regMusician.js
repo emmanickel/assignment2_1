@@ -47,7 +47,7 @@ function regMusician()
             default:
                 // If the input is invalid, an error is thrown and the while loop
                 // continues, allowing the user to re-enter input 
-                console.log("Invalid input.");
+                console.log("Invalid input. Instrument must be either guitarist, bassist, percussionist or flautist.");
                 continue;
         }
         break;
@@ -76,7 +76,7 @@ function regMusician()
                 // Else statements prompt user to enter input
                 // trim() removes white space from input
                 else{
-                    m_rate = prompt("Enter the musician's hourly rate: ").trim();
+                    m_rate = prompt("Enter the musician's hourly rate (as a number): ").trim();
                     musi.hourlyRate = m_rate;
                 }
             }
