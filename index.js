@@ -133,7 +133,6 @@ function selectFn(){
                 // Give title
                 console.clear();
                 console.log(`\nSummary Description`);
-                console.log(`============================`);
                 // Get summary description of the selected troupe by calling the
                 // giveSummaryDesc function
                 console.log(giveDescriptions.giveSummaryDesc(troupes, false, index));
@@ -147,7 +146,6 @@ function selectFn(){
                 // Give title
                 console.clear();
                 console.log(`\nDetailed Description`);
-                console.log(`============================`);
                 // Get detailed description of the selected troupe by calling the
                 // giveSummaryDesc function
                 console.log(giveDescriptions.giveSummaryDesc(troupes, true, index));
