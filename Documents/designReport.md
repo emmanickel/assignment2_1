@@ -170,6 +170,8 @@ Behaviours (Methods):
         /* return interesting_fact = "Everyone loves a bassist" */
     }
 
+<br>
+
 **5. Percussionist Class extends Musician Class:**
 
 Properties (Data):
@@ -180,6 +182,8 @@ Behaviours (Methods):
     interestingFact(){
         /* return interesting_fact = "Me drum" */
     }
+    
+<br>
 
 **6. Flautist Class extends Musician Class:**
 
@@ -212,8 +216,8 @@ Behaviours (Methods):
 
 **Relationships between classes**
 
-Of the 6 classes listed above, the following inheritance relationships will exist:
-- Musician class is the parent class of:
+The principle of inheritance in OOP involves arranging data in a hierarchical structure so that the data and methods of parent class (superclass) are available to the child classes (subclasses). Of the 6 classes listed above, the following inheritance relationships will exist:
+- Musician class is the parent class (superclass) of the following child classes (subclasses):
     - Guitarist class
     - Bassist class
     - Percussionist class
@@ -223,6 +227,7 @@ Of the 6 classes listed above, the following inheritance relationships will exis
 <br>
 
 **Aggregation**
+Aggregation refers to arranging data (including objects) in collections such as arrays and maps so that relationships between the data can exist and be referenced. 
 
 - All created Troupe objects will be stored in an array 'troupes'
 - All created Musician objects will be stored in an array 'musicians'
