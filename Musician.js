@@ -52,7 +52,7 @@ class Musician{
         }
         // Error on invalid input
         else {
-            console.log('Invalid input. Please enter an hourly rate as a number greater than 50.');
+            console.log('Invalid input. Hourly rate must be a number greater than 50.');
         }
     }
     get hourlyRate(){
