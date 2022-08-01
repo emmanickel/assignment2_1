@@ -28,6 +28,7 @@ const troupes = new Array();
 // - When there are no members of a troupe, should we still print the summary
 // and detailed description?
 // - Allow create a second musician/troupe with the same name?
+// - Case sensitivity on input?
 //===========================================================================
 // FOR TESTING:
 // Create some musicians:
@@ -73,6 +74,11 @@ t2.tName = "the strokes";
 t2.mDur = '3';
 t2.tGenre = 'rock';
 troupes.push(t2);
+
+// Add some musicians to a troupe:
+t1.tMembers.push(g1);
+t1.tMembers.push(b1);
+
 //===========================================================================
 
 // Call selectFn function to operate main menu:
@@ -101,23 +107,23 @@ function selectFn(){
                 // Add a musician by calling the regMusician function:
                 musicians.push(regMusician.regMusician());
                 console.clear();
-                console.log("You have successfully created a musician.");
-                prompt("Press any key to continue.");
+                console.log("You have successfully created a musician.\n");
+                prompt("Press the enter key to continue.");
                 continue;
             case 2:
                 console.clear();
-                console.log("You have selected to register a troupe.");
+                console.log("You have selected to register a troupe.\n");
                 // Add a troupe by calling the regTroupe function:
                 troupes.push(regTroupe.regTroupe());
                 console.clear();
                 console.log("You have successfully created a troupe.");
-                prompt("Press any key to continue.");
+                prompt("Press the enter key to continue.");
                 continue;
             case 3:
                 console.clear();
-                console.log("You have selected to add a musician to a troupe.");
+                console.log("You have selected to add a musician to a troupe.\n");
                 addMusicianTroupe.dispTroupeMembers(musicians, troupes);
-                prompt("Press any key to continue.");
+                prompt("Press the enter key to continue.");
                 continue;
             case 4:
                 console.clear();
@@ -131,7 +137,7 @@ function selectFn(){
                 // Get summary description of the selected troupe by calling the
                 // giveSummaryDesc function
                 console.log(giveDescriptions.giveSummaryDesc(troupes, false, index));
-                prompt("Press any key to continue.");
+                prompt("Press the enter key to continue.");
                 continue;
             case 5:
                 console.clear();
@@ -145,7 +151,7 @@ function selectFn(){
                 // Get detailed description of the selected troupe by calling the
                 // giveSummaryDesc function
                 console.log(giveDescriptions.giveSummaryDesc(troupes, true, index));
-                prompt("Press any key to continue.");
+                prompt("Press the enter key to continue.");
                 continue;
             case 6:
                 console.clear();
@@ -153,7 +159,7 @@ function selectFn(){
                 console.clear();
                 // Get cost of deployment throught the calDepCost function:
                 calDepCost.calDepCost(troupes);
-                prompt("Press any key to continue.");
+                prompt("Press the enter key to continue.");
                 continue;
             case 7:
                 console.clear();
@@ -161,15 +167,16 @@ function selectFn(){
                 console.clear();
                 // Read troupe names from a file using the readTroupeNames function
                 readTroupeNames.readTroupeNames(troupes);
-                prompt("Press any key to continue.");
+                prompt("Press the enter key to continue.");
                 continue;
             case 8:
                 console.clear();
                 console.log("You have selected to write a list of the detailed descriptions for all troupes to a given file name.");
                 console.clear();
                 // Write detailed descriptions of all troupes to file of given name:
-                writeToFile.writeFileDesc(troupes);
-                prompt("Press any key to continue.");
+                fileName = writeToFile.writeFileDesc(troupes);
+                console.log(`You have successfully written a list of the detailed descriptions for all troupes to a file called "${fileName}.txt".\n`);
+                prompt("Press the enter key to continue.");
                 continue;
             case 9:
                 console.clear();
@@ -179,11 +186,14 @@ function selectFn(){
             default:
                 console.clear();
                 // Give error on invalid input:
-                console.log("Invalid input");
-                prompt("Press any key to continue.");
+                console.log("Invalid input. Selection must be a number between 1-9.");
+                prompt("Press the enter key to continue.");
                 continue;
             }
         // Break out of while loop once switch is complete:
         break;
     }
 }
+
+
+module.exports = {selectFn}
