@@ -1,31 +1,13 @@
 # VCS Report
 ### Emma Nickel
 
-## Criteria:
-
-    Research and choose version control system (VCS) according to organisational requirements, Explain how the VCS you choose fits with the organisational requirements.
-
-    - Identify VCS pre-installation factors, then communicate any installation disruptions or requirements according to organisational policies and procedures.
-
-    - Install VCS and create personal account and push changes from branch according to VCS service provider and organisational requirements.
-
-    - Configure tools and user interface of VCS according to organisational requirements
-
-    - Create local repository and directory according to service provider procedures and organisational requirements
-
-    - Demonstrates knowledge of distributed and centralised version control systems, web-based DevOps lifecycle tools , DevOps automation tools, principles and techniques of creating repositories and branch workflows, and distributed version control industry standard best practices
-
-    - Write VCS report as markdown file and commit to project repository.
-
-    - Report Includes 400 - 600 Words
-
 <br>
 
 Version Control Systems (VCS) are software tools used to track changes in files over time. In software development they allow teams to contribute to and monitor simultaneous source code modifications. A VCS also allows proposed changes to be integrated smoothly.
 
 <br>
 
-## Different VCS Investigated:
+## Different VCS Investigated
 
 **Git**
 
@@ -48,25 +30,26 @@ Mercurial was written mainly in Python, and partly with C. Mercurial is similar 
 
 <br>
 
-##	Benefits of different VCS:
+##	Benefits of different VCS
 
- Provides strong support for non-linear development
--	Offers cryptographic authentication of history
--	Garbage accumulates until collected
--	Periodic explicit object packing
-
-
-| |  Git | CVS | Mercurial |
-|---|---|---|---|
-| Benefits | Distributed Model <br> Many commands – more powerful <br> Fast and efficient performance Can be used for small or large projects, but more effective for larger scale Cross-platform <br> Allows clear tracking of code changes <br> Full history tree available offline <br> Powerful CL utility git bash can be used or user-friendly GIT GUI |	Excellent cross-platform support <br> Powerful, fully-featured command-line client <br> Very old and well understood (considered to be a ‘mature technology’ <br> Allows good web browsing of source code repository | Distributed Model <br> Safer for less experienced users <br> Conceptually simple to use – easy to learn (than git) <br> Fast and powerful |
-| Disadvantages | Historylogs can become confusing in larger and more complex projects <br> Can be difficult to learn <br> Not optimal for single developers (better for larger teams) <br> Limited Windows support compared to Linux | No integrity checking for source code repository <br> Movingrenaming files does not include a version update <br> Doesn’t support atomic (all file) checkouts and commits <br> Poor support for distributed source control <br> Doesn’t support signed revisions or merge tracking <br> Branch operations expensive as not designed for long-term branching <br> Security risks from symbolic links to files | Problematic when used with additional extensions <br> Partial checkouts not allowed <br> Doesn’t allow 2 parents to be merged  <br> Uses an extension system rather than being scriptable <br> Less out of the box power (than git) |
+|  Git | CVS | Mercurial |
+|---|---|---|
+| - Distributed model <br> - Many powerful commands available <br> - Fast and efficient performance <br > - Can be used in small or large projects, but more effective for larger scale  <br> - Cross-platform (works on many operating systems)<br> - Allows clear tracking of code changes over time <br> - Supports atomic (all file) commits <br> - Full history tree available offline <br> - Powerful CL utility git bash can be used or user-friendly Git GUI |- Excellent cross-platform support <br> - Powerful, fully-featured command-line client <br> - Very old and well understood (considered to be a ‘mature technology’ <br> - Allows good web browsing of source code repository | - Distributed Model <br> - Safer for less experienced users <br> - Conceptually simple with good UX, making it easy to use and learn (in comparison to git) <br> - Fast and powerful |
 
 <br>
 
-## How the chosen VCS fits organisational requirements:
+## Disadvantages of different VCS
+
+|  Git | CVS | Mercurial |
+|---|---|---|
+| - History logs can become confusing in larger and more complex projects <br> - Can be difficult to learn <br> - Not optimal for single developers (better for larger teams) <br> - Limited Windows support compared to Linux | - No integrity checking for source code repository <br> - Doesn’t support atomic (all file) checkouts and commits <br> - Poor support for distributed source control <br> - Doesn’t support signed revisions or merge tracking <br> - Branch operations expensive as not designed for long-term branching <br> - Security risks from symbolic links to files | - Problematic when used with additional extensions <br> - Partial checkouts not allowed <br> - Doesn’t allow two parents to be merged  <br> - Uses an extension system rather than being scriptable <br> - Less out of the box power (than git) |
+
+<br>
+
+## How the chosen VCS fits organisational requirements
 **Chosen VCS: Git**
 
-While it has a steep learning curve, Git’s power as a distributed VCS and wide use in industry makes it a good choice for Globex Corporation in the MusoPlan project. The use of Git will allow Globex’s software developers to work as a team simultaneously, with all development to take place on feature branches (leaving the main branch exclusively for initialisation and merges). Git also allows all commits to be made with industry standard messages that clearly track all changes in detail, containing the author’s name and email address.
+While it has a steep learning curve, Git’s power as a distributed VCS and wide use in industry makes it a gVersion Control Software Comparison: Git, Mercurial,CVS, SVN. (2022). Retrieved 1 August 2022, from https://medium.com/@derya.cortuk/version-control-software-comparison-git-mercurial-cvs-svn-21b2a71226e4ood choice for Globex Corporation in the MusoPlan project. The use of Git will allow Globex’s software developers to work as a team simultaneously, with all development to take place on feature branches (leaving the main branch exclusively for initialisation and merges). Git also allows all commits to be made with industry standard messages that clearly track all changes in detail, containing the author’s name and email address.
 
 <br>
 
@@ -88,7 +71,7 @@ To install Git on a Windows computer, follow the steps below:
 
 <br>
 
-**Common Git Installation Issues:**
+**Common Git Installation Issues**
 
 Common Git installation issues include:
 - Git is already installed to the system
@@ -100,7 +83,7 @@ Common Git installation issues include:
 
 <br>
 
-**Configuration process:** 
+**Configuration process** 
 
 In order to configure Git so that all commits show the author's name and email, run the following commands:
 
@@ -122,17 +105,19 @@ To show all configuration details, run the command:
 
 <br>
 
-## References:
-https://medium.com/@derya.cortuk/version-control-software-comparison-git-mercurial-cvs-svn-21b2a71226e4
+## References
+(APA 6th Edition)
 
-https://www.educative.io/answers/how-to-install-git-bash-in-windows
+Centralized vs Distributed Version Control Systems [CVCS vs DVCS]. (2022). Retrieved 1 August 2022, from https://devopsbuzz.com/centralized-vs-distributed-version-control-systems/#:~:text=The%20concept%20of%20a%20centralized,repo%20on%20the%20server%20side.
 
-https://devopsbuzz.com/centralized-vs-distributed-version-control-systems/#:~:text=The%20concept%20of%20a%20centralized,repo%20on%20the%20server%20side.
+Essential CVS, 2nd Edition. (2022). Retrieved 1 August 2022, from https://www.oreilly.com/library/view/essential-cvs-2nd/0596527039/ch01.html
 
-https://biz30.timedoctor.com/git-mecurial-and-cvs-comparison-of-svn-software/
+How to install Git Bash in Windows. (2022). Retrieved 1 August 2022, from https://www.educative.io/answers/how-to-install-git-bash-in-windows
 
-https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/#step-1-downloading-git-bash
+How To Install Git Bash On Windows. (2022). Retrieved 1 August 2022, from https://www.stanleyulili.com/git/how-to-install-git-bash-on-windows/#step-1-downloading-git-bash
 
-https://www.perforce.com/blog/vcs/what-is-version-control#:~:text=Version%20control%2C%20also%20known%20as,binary%20files%2C%20and%20digital%20assets.
+Version Control Software Comparison: Git, Mercurial,CVS, SVN. (2022). Retrieved 1 August 2022, from https://medium.com/@derya.cortuk/version-control-software-comparison-git-mercurial-cvs-svn-21b2a71226e4
 
-https://www.oreilly.com/library/view/essential-cvs-2nd/0596527039/ch01.html
+What Is Version Control and How Does It Work? | Perforce Software. (2022). Retrieved 1 August 2022, from https://www.perforce.com/blog/vcs/what-is-version-control#:~:text=Version%20control%2C%20also%20known%20as,binary%20files%2C%20and%20digital%20assets.
+
+2022 Version Control Software Comparison: SVN, Git, Mercurial. (2022). Retrieved 1 August 2022, from https://biz30.timedoctor.com/git-mecurial-and-cvs-comparison-of-svn-software/
