@@ -12,7 +12,7 @@ function calDepCost(troupes){
 
     while(true){
     // Give list of troupe names:
-    console.log("The current available musicians are: ");
+    console.log("The current available troupes are: ");
     for(let i=0; i<troupes.length; i++){
         console.log(`\t- ${troupes[i].tName}`);
     }
