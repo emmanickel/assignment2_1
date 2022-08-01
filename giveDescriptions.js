@@ -62,39 +62,46 @@ function giveSummaryDesc(troupes, detailed, i){
 
 
     // Access troupe name from troupes array and store in result variable:
-    result = (`Troupe name: ${troupes[i].tName}\n`);
+    result = (`==============================\nTroupe name: ${troupes[i].tName}\n`);
+    result = result.concat("==============================\n");
     // Declare count variable to keep track of the number of each instrument in the troupe:
     let count = [0,0,0,0];
     // For loop to append result with a list of troupe members name and instrument:
-    result = result.concat(`Members: \n`);
-        for(let x = 0; x < troupes[i].tMembers.length; x++){
-            result = result.concat(`\t- ${troupes[i].tMembers[x].mName}\n`);
-            // Switch statement increments count array value according to the instrument the member plays:
-            switch(troupes[i].tMembers.mInst){
-                case 'guitarist':
-                    count[0]++;
-                    break;
-                case 'bassist':
-                    count[1]++;
-                    break;
-                case 'percussionist':
-                    count[2]++;
-                    break;
-                case 'flautist':
-                    count[3]++;
-                    break;
-                default:
-                    break;
-           }
+    result = result.concat(`Members: `);
+        if(troupes[i].tMembers.length == 0){
+            result = result.concat(`None\n`);
         }
-    result = result.concat(`Instruments:\n\t- Guitarists: ${count[0]}\n\t- Bassists: ${count[1]}\n\t- Percussionists: ${count[2]}\n\t- Flautists: ${count[3]}\n`);
+        else{
+            for(let x = 0; x < troupes[i].tMembers.length; x++){
+                result = result.concat(`\n\t- ${troupes[i].tMembers[x].mName}`);
+                // Switch statement increments count array value according to the instrument the member plays:
+                switch(troupes[i].tMembers[x].mInst){
+                    case 'guitarist':
+                        count[0]++;
+                        break;
+                    case 'bassist':
+                        count[1]++;
+                        break;
+                    case 'percussionist':
+                        count[2]++;
+                        break;
+                    case 'flautist':
+                        count[3]++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            // Give number of each instrument in troupe:
+            result = result.concat(`\nInstruments:\n\t- Guitarists: ${count[0]}\n\t- Bassists: ${count[1]}\n\t- Percussionists: ${count[2]}\n\t- Flautists: ${count[3]}\n`);
+        }
     // Append result with troupe genre from troupes array:
     result = result.concat(`Genre: ${troupes[i].tGenre}\n`);
     // Append result with troupe minimum duration from troupes array:
     result = result.concat(`Minimum duration: ${troupes[i].mDur} hours\n`);
     // Append result with troupe hourly rate by calling calHrlyRate function from Troupe class:
     result = result.concat(`Hourly rate: $${parseInt(Troupe.prototype.calHrlyRate.call(troupes[i]))}/hr\n\n`);
-     
+    
     // Add detailed description to result variable (if detailed == true) by
     // calling the function giveDetailedDesc():
     if(detailed == true){
@@ -112,7 +119,7 @@ function giveDetailedDesc(troupes, i){
         return result;
     }
     // Introduce each musician:
-    result = "Troupe members:\n----------------------------\n\n";
+    result = "Troupe members:\n----------------------------\n";
     for(let x=0; x<troupes[i].tMembers.length; x++){
         result = result.concat(`Name: ${troupes[i].tMembers[x].mName}\nInstrument: ${troupes[i].tMembers[x].mInst}\nYears playing: ${troupes[i].tMembers[x].yrsPlaying}\nHourly rate: ${troupes[i].tMembers[x].hrlyRate}\n`);
         // result = result.concat(Musician.prototype.giveInterestingFact.call(troupes[i].tMembers[x]));
