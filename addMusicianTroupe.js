@@ -61,7 +61,7 @@ function addMusicianTroupe(musicians, troupes)
                             for(let x = 0; x < troupes[z].tMembers.length; x++){
                                 if(musicians[i].mName == troupes[z].tMembers[x].mName){
                                     // Give error message if musician is already in troupe
-                                    console.log(`${musicians[i].mName} is already a member of ${troupes[z].tName}. Please try again.`);
+                                    console.log(`${musicians[i].mName} is already a member of ${troupes[z].tName}. Please select another musician.`);
                                     return addMusicianTroupe(musicians, troupes);    
                                 }
                             }
