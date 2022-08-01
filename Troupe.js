@@ -10,7 +10,7 @@ class Troupe{
                 this.tName = name;
             // Give error on invalid input
             else{
-                console.log('Invalid input. Please enter a troupe name between 3 and 30 characters in length: ');
+                console.log('Invalid input. Troupe name must be between 3 and 30 characters in length.');
             }
         }
         get troupeName(){
@@ -25,7 +25,7 @@ class Troupe{
             }
             // Error on invalid input
             else {
-                console.log('Invalid input. Please enter one of the following genres (rock/jazz/pop): ');
+                console.log('Invalid input. Genre must be either rock, jazz or pop.');
             }    
         }
         get troupeGenre(){
@@ -40,7 +40,7 @@ class Troupe{
             }
             // Error on invalid input
             else {
-                console.log('Invalid input. Please enter minimum duration between 0.5 and 3 hours: ');
+                console.log('Invalid input. Minimum duration between 0.5 and 3 hours.');
             }
         }
         get minDuration(){
