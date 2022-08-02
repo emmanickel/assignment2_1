@@ -39,13 +39,6 @@ function getTroupeName(troupes){
         console.log ("\nInvalid selection. Please try again.\n");
     }
 }
-        // break;
-    // }
-        // If troupe name doesn't exist, give error:
-        // console.log ("\nInvalid selection. Please try again.\n");
-        // Break out of for loop to prompt user for input again:
-        // getTroupeName(troupes);
-    
 
 
 // Function giveSummaryDesc returns a summary description of the selected troupe
@@ -57,9 +50,6 @@ function getTroupeName(troupes){
     // index of selected troupe to give description for
 // Return value: result variable, which holds the string containing the description
 function giveSummaryDesc(troupes, detailed, i){
-
-    // IF THERE ARENT ANY TROUPE MEMBERS YET GIVE ERROR MESSAGE:
-
 
     // Access troupe name from troupes array and store in result variable:
     result = (`==============================\nTroupe name: ${troupes[i].tName}\n`);
