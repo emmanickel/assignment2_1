@@ -65,7 +65,7 @@ function regMusician(musicians)
         if(m_name.length >= 3 && m_name.length <=30){
             // For loop checks musician name doesn't already exist:
             for(let i = 0; i < musicians.length; i++){
-                if(musicians[i].mName == m_name){
+                if(musicians[i].mName.toLowerCase() == m_name.toLowerCase()){
                     console.log("Musician name already exists. Please try again.");
                     m_name = "";
                     break outer;
@@ -84,7 +84,7 @@ function regMusician(musicians)
                 // Else statements prompt user to enter input
                 // trim() removes white space from input
                 else{
-                    m_rate = prompt("Enter the musician's hourly rate (as a number): ").trim();
+                    m_rate = prompt("Enter the musician's hourly rate: ").trim();
                     musi.hourlyRate = m_rate;
                 }
             }
