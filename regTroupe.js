@@ -29,7 +29,7 @@ function regTroupe(troupes)
         if(t_name.length >= 3 && t_name.length <=30){
             // For loop checks troupe name doesn't already exist:
             for(let i = 0; i < troupes.length; i++){
-                if(troupes[i].tName == t_name){
+                if(troupes[i].tName.toLowerCase() == t_name.toLowerCase()){
                     console.log("Troupe name already exists. Please try again.");
                     t_name = "";
                     break outer;
