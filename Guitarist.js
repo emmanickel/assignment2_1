@@ -10,7 +10,7 @@ class Guitarist extends Musician{
     // to the instrumentalist
     // It has no input parameters
     giveInterestingFact(){
-        return `Interesting fact: "The more strings you have, the better you are"\n\n`;
+        return `"The more strings you have, the better you are"\n\n`;
     }
 }
 
