@@ -38,9 +38,9 @@ function addMusicianTroupe(musicians, troupes)
         // Get musician name from user (removing white space):
         let mName = prompt("Please select a musician from the list above: ").trim();
 
-        // Check given musician name is valid:
+        // Check entered musician name is valid (not case sensitive, ignoring white space):
             for(let i = 0; i < musicians.length; i++){
-                if(mName == musicians[i].mName){
+                if(mName.toLowerCase() == musicians[i].mName.toLowerCase()){
                     // Let the user know the musician has been selected successfully
                     console.log(`You have selected the musician: ${musicians[i].mName}.`);
                     // While loop gives user unlimited attempts to select troupe:
@@ -52,13 +52,13 @@ function addMusicianTroupe(musicians, troupes)
                         for(let i=0; i<troupes.length; i++){
                             console.log(`\t- ${troupes[i].tName}`);
                         }
-                    // Prompt the user to input troupe name:
-                    let tName = prompt("Please select a troupe from the list above: ");
+                    // Prompt the user to input troupe name from given list:
+                    let tName = prompt("Please select a troupe from the list above: ").trim();
 
                     // For loop cycles through troupe names to check a valid name has
-                    // been entered:
+                    // been entered (not case sensitive, ignoring white space):
                     for(let z = 0; z < troupes.length; z++){
-                        if(tName == troupes[z].tName){
+                        if(tName.toLowerCase() == troupes[z].tName.toLowerCase()){
                             // For loop to check musician isn't already in the troupe:
                             for(let x = 0; x < troupes[z].tMembers.length; x++){
                                 if(musicians[i].mName == troupes[z].tMembers[x].mName){
