@@ -60,6 +60,20 @@ f1.yrsPlaying = '9';
 f1.hrlyRate = '95';
 musicians.push(f1);
 
+let p2 = new Percussionist()
+p2.mInst = 'percussionist';
+p2.mName = "shelby";
+p2.yrsPlaying = '5';
+p2.hrlyRate = '75';
+musicians.push(p2);
+
+let f2 = new Flautist()
+f2.mInst = 'flautist';
+f2.mName = "andrew";
+f2.yrsPlaying = '9';
+f2.hrlyRate = '100';
+musicians.push(f2);
+
 // Create some troupes:
 let t1 = new Troupe()
 t1.tMembers = [];
@@ -78,6 +92,9 @@ troupes.push(t2);
 // Add some musicians to a troupe:
 t1.tMembers.push(g1);
 t1.tMembers.push(b1);
+t1.tMembers.push(p1);
+t1.tMembers.push(f1);
+t1.tMembers.push(p2);
 
 //===========================================================================
 
