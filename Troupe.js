@@ -50,8 +50,9 @@ class Troupe{
         calHrlyRate(){
             let sum = 0;
             for(let i = 0; i<this.tMembers.length; i++){
-                sum += parseInt(this.tMembers[i].hrlyRate);
+                sum += Number(this.tMembers[i].hrlyRate);
             }
+            sum = Math.round((sum + Number.EPSILON) * 100) / 100;
             return sum;
         }
 
