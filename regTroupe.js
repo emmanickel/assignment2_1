@@ -30,7 +30,7 @@ function regTroupe(troupes)
             // For loop checks troupe name doesn't already exist:
             for(let i = 0; i < troupes.length; i++){
                 if(troupes[i].tName == t_name){
-                    console.log("Troupe name already exists. Please try again")
+                    console.log("Troupe name already exists. Please try again.");
                     t_name = "";
                     break outer;
                 }
