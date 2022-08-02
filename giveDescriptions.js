@@ -90,7 +90,7 @@ function giveSummaryDesc(troupes, detailed, i){
     // Append result with troupe minimum duration from troupes array:
     result = result.concat(`Minimum duration: ${troupes[i].mDur} hours\n`);
     // Append result with troupe hourly rate by calling calHrlyRate function from Troupe class:
-    result = result.concat(`Hourly rate: $${parseInt(Troupe.prototype.calHrlyRate.call(troupes[i]))}/hr\n\n`);
+    result = result.concat(`Hourly rate: $${Number(Troupe.prototype.calHrlyRate.call(troupes[i]))}/hr\n\n`);
     
     // Add detailed description to result variable (if detailed == true) by
     // calling the function giveDetailedDesc():
@@ -109,7 +109,7 @@ function giveDetailedDesc(troupes, i){
         return result;
     }
     // Introduce each musician:
-    result = "Troupe members:\n----------------------------\n";
+    result = "Troupe member introductions:\n-----------------------------------------------------------\n";
     for(let x=0; x<troupes[i].tMembers.length; x++){
         result = result.concat(`Hello, my name is ${troupes[i].tMembers[x].mName} and I am a ${troupes[i].tMembers[x].mInst}.\nI have been playing for ${troupes[i].tMembers[x].yrsPlaying} years and my hourly rate is $${troupes[i].tMembers[x].hrlyRate}/hr.\nHere's an interesting fact about ${troupes[i].tMembers[x].mInst}s:\n`);
      
