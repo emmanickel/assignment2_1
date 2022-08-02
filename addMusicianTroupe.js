@@ -44,6 +44,8 @@ function addMusicianTroupe(musicians, troupes)
                     // Let the user know the musician has been selected successfully
                     console.log(`You have selected the musician: ${musicians[i].mName}.`);
                     // While loop gives user unlimited attempts to select troupe:
+                    // Outer label used to jump to if user attempts to add a 6th member to a troupe
+                    outer:
                     while(true){
                         console.log("The current available troupes are: ");    
                         // Show list of current troupe names:       
@@ -77,8 +79,8 @@ function addMusicianTroupe(musicians, troupes)
                             }
                             else{
                                 // Give error message if there are already 5 members in the troupe:
-                                console.log("This troupe is full. Please select another troupe.");
-                                break;
+                                console.log(`This troupe is full. Please select another troupe.`);
+                                continue outer;
                             }
                         }
                     }
