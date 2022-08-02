@@ -66,7 +66,7 @@ function regMusician(musicians)
             // For loop checks musician name doesn't already exist:
             for(let i = 0; i < musicians.length; i++){
                 if(musicians[i].mName == m_name){
-                    console.log("Musician name already exists. Please try again")
+                    console.log("Musician name already exists. Please try again.");
                     m_name = "";
                     break outer;
                 }
