@@ -58,25 +58,6 @@ class Musician{
     get hourlyRate(){
         return this.hrlyRate;
     }
-
-    // giveInterestingFact(){
-        // return this.mInst;
-        // console.log("Need to be an instrumentalist");
-        // console.log(this.mInst);
-        // switch(this.mInst){
-        //     case 'guitarist':
-        //         return "The more strings you have, the better you are";
-        //     case 'bassist':
-        //         return "Everyone loves a bassist";
-        //     case 'percussionist':
-        //         return "Me drum";
-        //     case 'flautist':
-        //         return "1989 heavy metal instrument of the year";
-        //     default:
-        //         console.log("Instrument unknown");
-        //         return;
-        // }
-//     }
 }
 
 // Export Student class:
