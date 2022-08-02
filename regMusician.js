@@ -16,7 +16,7 @@ const prompt = require('prompt-sync')();
     // years playing must be: a non-negative number
     // hourly rate must be: a number greater than (or equal to) 50
 // Returns the Musician object that has been created
-function regMusician()
+function regMusician(musicians)
 {
     // While loop takes user input to select musician's instrument
     while(true){
@@ -52,17 +52,25 @@ function regMusician()
         }
         break;
     }
-
     // Declare variables such that they are defined but invalid:
     let m_name = "";
     let yrs_playing = -1;
     let m_rate = 0;
-
     // While loop takes user input of the musicians name, years playing and hourly rate:
     while(true){
+        // Outer label is jumped to if musician name already exists
+        outer:
         // If statements validate that input value meets required conditions
         // Name must be between 3 and 30 characters long: 
         if(m_name.length >= 3 && m_name.length <=30){
+            // For loop checks musician name doesn't already exist:
+            for(let i = 0; i < musicians.length; i++){
+                if(musicians[i].mName == m_name){
+                    console.log("Musician name already exists. Please try again")
+                    m_name = "";
+                    break outer;
+                }
+            }
             musi.musicianName = m_name;
             // Years playing must be a non negative number:
             if(yrs_playing >= 0 && !isNaN(yrs_playing)){
@@ -88,6 +96,25 @@ function regMusician()
         else{
             m_name = prompt("Enter the musician's name: ").trim();
             musi.musicianName = m_name;
+
+
+            // // // For loop checks musician name doesn't already exist:
+            // for(let i = 0; i < musicians.length; i++){
+            //     if(musicians[i].mName == m_name){
+            //         repeat = true;
+            //         break;
+            //     }
+            // }
+            // if(repeat == false)
+            // {
+            //     musi.musicianName = m_name;
+            // }
+            // else{
+            //     console.log("Musician name already exits. Please enter a new musician name.");
+            //     instrument = prompt("Please choose a type of instrumentalist (guitarist/bassist/percussionist/flautist): ").trim().toLowerCase();
+            //     break;
+            // }
+            // musi.musicianName = m_name;
         }
     }
     return(musi);
