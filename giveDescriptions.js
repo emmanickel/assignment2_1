@@ -111,9 +111,8 @@ function giveDetailedDesc(troupes, i){
     // Introduce each musician:
     result = "Troupe members:\n----------------------------\n";
     for(let x=0; x<troupes[i].tMembers.length; x++){
-        result = result.concat(`Name: ${troupes[i].tMembers[x].mName}\nInstrument: ${troupes[i].tMembers[x].mInst}\nYears playing: ${troupes[i].tMembers[x].yrsPlaying}\nHourly rate: ${troupes[i].tMembers[x].hrlyRate}\n`);
-        // result = result.concat(Musician.prototype.giveInterestingFact.call(troupes[i].tMembers[x]));
-
+        result = result.concat(`Hello, my name is ${troupes[i].tMembers[x].mName} and I am a ${troupes[i].tMembers[x].mInst}.\nI have been playing for ${troupes[i].tMembers[x].yrsPlaying} years and my hourly rate is $${troupes[i].tMembers[x].hrlyRate}/hr.\nHere's an interesting fact about ${troupes[i].tMembers[x].mInst}s:\n`);
+     
         // Get interesting fact depending on instrument:
         switch(troupes[i].tMembers[x].mInst){
             case 'guitarist':
