@@ -8,21 +8,24 @@ const prompt = require('prompt-sync')();
 
 function dispMenu(){
     const menuDisplay = `\
-    |====================================================================================|
-    |                                       MusoPlan                                     |
-    |====================================================================================|
-    |               Please select a number from one of the following options:            |
-    |====================================================================================|
-    | 1. Create a musician                                                               |
-    | 2. Create a troupe                                                                 |
-    | 3. Add a musician to a troupe                                                      |
-    | 4. Provide a summary description of a troupe                                       |
-    | 5. Provide a detailed description of a troupe.                                     |
-    | 6. Calculate the cost of deploying the troupe for a number of hours                |             
-    | 7. Read a list of troupe names to be populated from a file                         |
-    | 8. Write a list of the detailed descriptions for all troupes to a given file name  |                
-    | 9. Exit Program                                                                    |
-    |====================================================================================|
+    |=================================================================|
+    |                            MusoPlan                             |
+    |=================================================================|
+    |                 Please select a number from one                 |
+    |                    of the following options:                    |
+    |=================================================================|
+    | 1. Create a musician                                            |
+    | 2. Create a troupe                                              |
+    | 3. Add a musician to a troupe                                   |
+    | 4. Provide a summary description of a troupe                    |
+    | 5. Provide a detailed description of a troupe                   |
+    | 6. Calculate the cost of deploying the troupe for a number of   |
+    |    hours                                                        |             
+    | 7. Read a list of troupe names to be populated from a file      |
+    | 8. Write a list of the detailed descriptions for all troupes    |
+    |    to a given file name                                         |                
+    | 9. Exit Program                                                 |
+    |=================================================================|
     \
     `;
     
