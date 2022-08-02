@@ -10,7 +10,7 @@ class Flautist extends Musician{
     // to the instrumentalist
     // It has no input parameters
     giveInterestingFact(){
-        return `Interesting fact: "1989 heavy metal instrument of the year"\n\n`;
+        return `"1989 heavy metal instrument of the year"\n\n`;
     }
 }
 
