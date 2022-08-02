@@ -61,12 +61,20 @@
 | `'3'` <br> `->'Emma'` <br> `->'The Strokes'`  | `'Successfully added emma to the strokes.'` |`'Successfully added emma to the strokes.'` | 
 | `'3'` <br> `->'Non-existent musician'`| `'Invalid selection. Please enter an existing musician name.'` |`'Invalid selection. Please enter an existing musician name.'` |
 | `'3'` <br> `->'Emma'` <br> `->'Non-existent troupe'` | `'Invalid selection. Please enter an existing troupe name.'` |`'Invalid selection. Please enter an existing troupe name.'` |
-| `'3'` <br> `->'Jack'` <br> `->'The Strokes'` <br> (6th member addition) | `'This troupe is full. Please select another musician.'` |`'This troupe is full. Please select another musician.'` | 
+| `'3'` <br> `->'Jack'` <br> `->'The Strokes'` <br> (6th member addition) | `'This troupe is full. Please select another troupe.'` |`'This troupe is full. Please select another troupe.'` | 
 | `'3'` <br> `->'Emma'` <br> `->'The Strokes'` <br> (Repeat addition) | `'Emma is already a member of The Strokes. Please select another musician.'` |`'Emma is already a member of The Strokes. Please select another musician.'` | 
 
 <br>
 
 ## Unit Test 4: Provide a summary description of a troupe
+
+**Testing instructions:**
+
+1. Select option 4 from the main menu by pressing 4.
+2. Enter the selected troupe's name chosen from the given list.
+
+<br>
+
 
 | Input | Expected output | Actual Output |
 |---|---|---|
@@ -77,6 +85,15 @@
 <br>
 
 ## Unit Test 5: Calculate the cost of deploying the troupe for a number of hours
+
+
+**Testing instructions:**
+
+1. Select option 6 from the main menu by pressing 6.
+2. Enter the selected troupe's name chosen from the given list.
+3. Enter the selected number of hours to deploy the troupe (as a number between the troupe's minimum duration and 3).
+
+<br>
 
 | Input | Expected output | Actual Output |
 |---|---|---|
