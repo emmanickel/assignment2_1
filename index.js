@@ -122,7 +122,7 @@ function selectFn(){
                 console.clear();
                 console.log("You have selected to register a musician.");
                 // Add a musician by calling the regMusician function:
-                musicians.push(regMusician.regMusician());
+                musicians.push(regMusician.regMusician(musicians));
                 console.clear();
                 console.log("You have successfully created a musician.\n");
                 prompt("Press the enter key to continue.");
@@ -131,7 +131,7 @@ function selectFn(){
                 console.clear();
                 console.log("You have selected to register a troupe.\n");
                 // Add a troupe by calling the regTroupe function:
-                troupes.push(regTroupe.regTroupe());
+                troupes.push(regTroupe.regTroupe(troupes));
                 console.clear();
                 console.log("You have successfully created a troupe.");
                 prompt("Press the enter key to continue.");
