@@ -10,7 +10,7 @@ class Bassist extends Musician{
     // to the instrumentalist
     // It has no input parameters
     giveInterestingFact(){
-        return `Interesting fact: "Everyone loves a bassist"\n\n`;
+        return `"Everyone loves a bassist"\n\n`;
     }
 }
 
