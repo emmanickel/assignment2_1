@@ -18,11 +18,11 @@ function calDepCost(troupes){
     }
 
     // Get troupe name from user:
-    let tName = prompt("Please select a troupes from the list above: ");
+    let tName = prompt("Please select a troupe from the list above: ").trim();
 
     // Check given musician name is valid:
     for(i = 0; i < troupes.length; i++){
-        if(tName == troupes[i].tName){
+        if(tName.toLowerCase() == troupes[i].tName.toLowerCase()){
             while(true){
                 // Get number of hours from user:
                 hours = prompt(`Please enter the number of hours to deploy ${troupes[i].tName} for: `);
