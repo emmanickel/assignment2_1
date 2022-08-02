@@ -10,7 +10,7 @@ class Percussionist extends Musician{
 // to the instrumentalist
  // It has no input parameters
     giveInterestingFact(){
-        return "Interesting fact: Me drum\n\n";
+        return `Interesting fact: "Me drum"\n\n`;
     }
 }
 
