@@ -31,7 +31,7 @@ function getTroupeName(troupes){
         
         // Use for loop to find selected troupe name within array troupes:
         for(i = 0; i < troupes.length; i++){
-            if(tName == troupes[i].tName){
+            if(tName.toLowerCase() == troupes[i].tName.toLowerCase()){
                 // Return index of selected troupe:
                 return i;
             }
