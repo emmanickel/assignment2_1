@@ -28,9 +28,11 @@ function dispMenu(){
     |=================================================================|
     \
     `;
-    
+    // Clear the console:
     console.clear();
+    // Display the menu:
     console.log(menuDisplay);
+    // Return user input:
     return prompt("Please enter your selection [1, 2, 3, 4, 5, 6, 7, 8, 9]: ");
 }
 
