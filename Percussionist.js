@@ -2,6 +2,7 @@
 const {Musician} = require('./Musician.js');
 
 class Percussionist extends Musician{
+    // Inherit properties from parent Musician class:
     constructor(mInst, mName, yrsPlaying, hrlyRate){
         super(mInst, mName, yrsPlaying, hrlyRate);
     }
@@ -14,4 +15,5 @@ class Percussionist extends Musician{
     }
 }
 
+// Export class:
 module.exports = {Percussionist}
