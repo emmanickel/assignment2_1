@@ -8,39 +8,39 @@ The application will operate from the command line, and upon startup will bring 
 
 **1. Create a musician**
 
-| Input | Data Type | Condition |
-|---|---|---|
-| Instrument | String | Equal to: 'guitarist', 'bassist', 'percussionist' or 'flautist'|
-| Musician name | String | Between 3 and 30 characters in length |
-| Years playing | Number | Non-negative |
-| Hourly rate | Number | greater than or equal to 50 |
+| Input | Condition |
+|---|---|
+| Instrument | Equal to: 'guitarist', 'bassist', 'percussionist' or 'flautist'|
+| Musician name | Between 3 and 30 characters in length |
+| Years playing | Non-negative |
+| Hourly rate | greater than or equal to 50 |
 
 <br>
 
 **2. Create a troupe**
 
-| Input | Data Type | Condition |
-|---|---|---|
-| Troupe name | String | Between 3 and 30 characters in length |
-| Minimum duration | Number | Between 0.5 and 3 |
-| Genre | String | Equal to: 'rock', 'jazz' or 'pop' |
+| Input |Condition |
+|---|---|
+| Troupe name | Between 3 and 30 characters in length |
+| Minimum duration| Between 0.5 and 3 |
+| Genre | Equal to: 'rock', 'jazz' or 'pop' |
 
 <br>
 
 **3. Add a musician to a troupe**
 
-| Input | Data Type | Condition |
-|---|---|---|
-| Troupe name | String | Existing troupe name |
-| Musician name | String | Existing musician name |
+| Input |Condition |
+|---|---|
+| Troupe name | Existing troupe name |
+| Musician name | Existing musician name |
 
 <br>
 
 **4. Provide a summary description of a troupe**
 
-| Input | Data Type | Condition |
-|---|---|---|
-| Troupe name | String | Existing troupe name |
+| Input | Condition |
+|---|---|
+| Troupe name | Existing troupe name |
 
 <br>
 
@@ -76,9 +76,9 @@ The application will operate from the command line, and upon startup will bring 
 
 **6. Calculate the cost of deploying the troupe for a number of hours**
 
-| Input | Data Type | Condition |
-|---|---|---|
-| Troupe name | String | Existing troupe name |
+| Input  | Condition |
+|---|---|
+| Troupe name  | Existing troupe name |
 | Number of hours | Greater than troupe's minimum duration but less than 3 hours |
 
 <br>
@@ -91,17 +91,17 @@ The application will operate from the command line, and upon startup will bring 
 
 **7. Read a list of troupe names to be populated from a file**
 
-| Input | Data Type | Condition |
-|---|---|---|
-| List of troupe names | String | Separated line by line |
+| Input | Condition |
+|---|---|
+| List of troupe names | Separated line by line |
 
 <br>
 
 **8. Write a list of the detailed descriptions for all troupes to a given filename**
 
-| Input | Data Type | Condition |
-|---|---|---|
-| File name | String | No file extension |
+| Input | Condition |
+|---|---|
+| File name | No file extension |
 
 <br> 
 
