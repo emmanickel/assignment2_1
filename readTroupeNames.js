@@ -17,14 +17,14 @@ function readTroupeNames(troupes){
     while(true){
     // Prompt the user to enter the filename (no extension required):
      fileName = prompt("Please enter a file name to read (without the file extension): ");
-    // let troupeNames;
     // Read text file of given name using readFileSync():
-    
+    // Try/Catch statement checks the user inputs a valid file name (that already exists)
     try{
         troupeNames = fs.readFileSync(`${fileName}.txt`, 'utf8');
         break;
     }
     catch{
+        // Error message on non-existent file:
         console.log("File name does not exist.");
     }
 }
@@ -35,21 +35,17 @@ function readTroupeNames(troupes){
     // In order to create troupes with the given names (by pushing to the troupes
     // array troupes which contains all Troupe objects):
     console.log(`\nTroupe names added: \n`);
-
-    for(let i = 0; i < troupeList.length; i++){
-        const troupe = new Troupe();
-        troupe.troupeName = troupeList[i];
-        if(troupe.troupeName != undefined){
-            troupes.push(troupe);
-            console.log(troupe.troupeName);
+        for(let i = 0; i < troupeList.length; i++){
+            const troupe = new Troupe();
+            troupe.troupeName = troupeList[i];
+            // If the name entered is valid (according to setter in Troupe class definition)
+            // push the new Troupe object to the troupes array:
+            if(troupe.troupeName != undefined){
+                troupes.push(troupe);
+                console.log(troupe.troupeName);
+            }
         }
-        //     console.log(troupe.troupeName);        }
-        // else{
-        //     troupes.push(troupe);
-        //     console.log(troupe.troupeName);
-        // }
-
-    }
+    // No return value
     return;
 }
 
