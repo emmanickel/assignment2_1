@@ -1,3 +1,6 @@
+// Import required classes:
+const {Troupe} = require('./Troupe');
+
 // Access prompt-sync package for user input:
 const prompt = require('prompt-sync')();
 
@@ -31,13 +34,22 @@ function readTroupeNames(troupes){
     // For loop cycles through each of the new troupe names
     // In order to create troupes with the given names (by pushing to the troupes
     // array troupes which contains all Troupe objects):
-    for(let i = 0; i < troupeList.length; i++){
-        troupes.push({tMembers: [], tName: troupeList[i], mDur: '', tGenre: ''});
-    }
-        
-    // Print new troupe names to the console:
-    console.log(`\nTroupe names added: \n${troupeNames}\n`);
+    console.log(`\nTroupe names added: \n`);
 
+    for(let i = 0; i < troupeList.length; i++){
+        const troupe = new Troupe();
+        troupe.troupeName = troupeList[i];
+        if(troupe.troupeName != undefined){
+            troupes.push(troupe);
+            console.log(troupe.troupeName);
+        }
+        //     console.log(troupe.troupeName);        }
+        // else{
+        //     troupes.push(troupe);
+        //     console.log(troupe.troupeName);
+        // }
+
+    }
     return;
 }
 
