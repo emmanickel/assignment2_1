@@ -66,7 +66,8 @@ The application will operate from the command line, and upon startup will bring 
 | Genre | `Genre: rock` |
 | Minimum duration | `Minimum duration: 2.5 hours` |
 | Hourly rate | `Hourly rate: $150/hr` |
-| Introduction of each musician | `Name: Emma` <br> `Instrument: Guitarist` <br> `Years playing: 7` <br> `Hourly rate: $55/hr` <br> `Interesting fact: The more strings you have, the better you are`|
+| Introduction of each musician | `Troupe member introductions:` <br> `---------------------------------------` <br> `Hello, my name is emma and I am a guitarist.` <br> `I have been playing for 8 years and my hourly rate is $55/hr.` <br>` Here's an interesting fact about guitarists:` <br> `"The more strings you have, the better you are"`|
+
     
 **Note:**
 - Interesting fact must be one of the following:
