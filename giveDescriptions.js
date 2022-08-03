@@ -19,7 +19,7 @@ function getTroupeName(troupes){
     while(true){
         // Error message if no available troupes
         if(troupes.length == 0){
-            console.log("Please create a troupe to continue");
+            console.log("No troupes available. Please create a troupe to continue.\n");
                 return;
         }
         // Use for loop to show list of available troupe names to user:
@@ -88,10 +88,22 @@ function giveSummaryDesc(troupes, detailed, i){
             // Give number of each instrument in troupe:
             result = result.concat(`\nInstruments:\n\t- Guitarists: ${count[0]}\n\t- Bassists: ${count[1]}\n\t- Percussionists: ${count[2]}\n\t- Flautists: ${count[3]}\n`);
         }
-    // Append result with troupe genre from troupes array:
-    result = result.concat(`Genre: ${troupes[i].tGenre}\n`);
+    // If no genre has been given, set it to blank:
+    if(troupes[i].tGenre == undefined){
+        result = result.concat(`Genre: Unknown\n`);
+    }
+    // Otherwise, append result with troupe genre from troupes array:
+    else{
+        result = result.concat(`Genre: ${troupes[i].tGenre}\n`);
+    }
+    // If no minimum duration has been given, set it to "0.5":
+    if(troupes[i].mDur == undefined){
+        result = result.concat(`Minimum duration: 0.5\n`);
+    }
     // Append result with troupe minimum duration from troupes array:
-    result = result.concat(`Minimum duration: ${troupes[i].mDur} hours\n`);
+    else{
+        result = result.concat(`Minimum duration: ${troupes[i].mDur} hours\n`);
+    }
     // Append result with troupe hourly rate by calling calHrlyRate function from Troupe class:
     result = result.concat(`Hourly rate: $${Number(Troupe.prototype.calHrlyRate.call(troupes[i]))}/hr\n\n`);
     
