@@ -7,15 +7,18 @@ const { Flautist } = require('./Flautist');
 // Access prompt-sync package for user input:
 const prompt = require('prompt-sync')();
 
-// Function regMusician creates a musician by first taking user selection of
+// Function regMusician creates a musician 
+// Input parameter is the current array of Musician objects
+// The function works by first taking user selection of
 // whether the musician is an guitarist, bassist, percussionist or flautist
 // It then takes user input to record their name, years playing and hourly rate
-// Accepted parameters: 
+// Accepted inputs: 
     // instrument must be either: guitarist/bassist/percussionist/flautist
     // name must be: between 3 and 30 characters (including)
     // years playing must be: a non-negative number
     // hourly rate must be: a number greater than (or equal to) 50
-// Returns the Musician object that has been created
+// Returns the Musician object that has been created (which is then pushed to the musicians array)
+
 function regMusician(musicians)
 {
     // While loop takes user input to select musician's instrument
@@ -68,37 +71,46 @@ function regMusician(musicians)
                 if(musicians[i].mName.toLowerCase() == m_name.toLowerCase()){
                     console.log("Musician name already exists. Please try again.");
                     m_name = "";
+                    // break to 'outer' label allows a 'double break':
                     break outer;
                 }
             }
+            // Assign musician object with the input name:
             musi.musicianName = m_name;
             // Years playing must be a non negative number:
             if(yrs_playing >= 0 && !isNaN(yrs_playing)){
+                // Assign musician object with the input years playing:
                 musi.yearsPlaying = yrs_playing;
                 // Hourly rate must be a number greater than 50:
                 if(m_rate>=50 && !isNaN(m_rate)){
+                    // Assign musician object with the input hourly rate:
                     musi.hourlyRate = m_rate;
                     // Break while loop once all conditions have been met
                     break;
                 }
-                // Else statements prompt user to enter input
-                // trim() removes white space from input
+                // Else statements prompt user to enter input:
+                // trim() removes white space
                 else{
                     m_rate = prompt("Enter the musician's hourly rate: ").trim();
+                    // Assign musician object with the input hourly rate:
                     musi.hourlyRate = m_rate;
                 }
             }
             else{
                 yrs_playing = prompt("Enter the number of years the musician has been playing: ").trim();
+                 // Assign musician object with the input years playing:
                 musi.yearsPlaying = yrs_playing;
             }
         }
         else{
             m_name = prompt("Enter the musician's name: ").trim();
+             // Assign musician object with the input name:
             musi.musicianName = m_name;
         }
     }
+    // Return created musician object:
     return(musi);
 }
 
+// Export class:
 module.exports = {regMusician}
