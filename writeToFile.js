@@ -9,6 +9,11 @@ const fs = require('fs');
 let giveDescriptions = require('./giveDescriptions.js');
 
 function writeFileDesc(troupes){
+    // If no troupes are available, exit function:
+    if(troupes.length == 0){
+        return;
+    }
+
     // Get file name from user:
     let fileName = prompt("Please enter a file name: ");
     let description = '';
