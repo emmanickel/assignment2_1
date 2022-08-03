@@ -119,8 +119,8 @@ function selectFn(){
                 musicians.push(regMusician.regMusician(musicians));
                 console.clear();
                 // Successful execution message:
-                console.log("You have successfully created a musician.\n");
-                prompt("Press the enter key to continue.");
+                console.log("You have successfully created a musician.");
+                prompt("\nPress the enter key to continue.");
                 continue;
             case 2:
                 console.clear();
@@ -132,16 +132,16 @@ function selectFn(){
                 console.clear();
                 console.log("You have successfully created a troupe.");
                 // Successful execution message:
-                prompt("Press the enter key to continue.");
+                prompt("\nPress the enter key to continue.");
                 continue;
             case 3:
                 console.clear();
                 // Successful selection message:
-                console.log("You have selected to add a musician to a troupe.\n");
+                console.log("You have selected to add a musician to a troupe.");
                 // Call dispTroupeMembers function (which calls the addMusicianTroupe
                 // function) to add a musician to a troupe
                 addMusicianTroupe.dispTroupeMembers(musicians, troupes);
-                prompt("Press the enter key to continue.");
+                prompt("\nPress the enter key to continue.");
                 continue;
             case 4:
                 console.clear();
@@ -149,12 +149,15 @@ function selectFn(){
                 console.log("You have selected to provide a summary description of a troupe.");
                 // Get troupe name (by index) by calling getTroupeName function
                 index = giveDescriptions.getTroupeName(troupes);
-                // Give title
-                console.clear();
-                console.log(`\nSummary Description`);
-                // Get summary description of the selected troupe by calling the
-                // giveSummaryDesc function
-                console.log(giveDescriptions.giveSummaryDesc(troupes, false, index));
+                // Check there are troupes available
+                if(index!=undefined){
+                    console.clear();
+                    // Give title
+                    console.log(`\nSummary Description`);
+                    // Get summary description of the selected troupe by calling the
+                    // giveSummaryDesc function
+                    console.log(giveDescriptions.giveSummaryDesc(troupes, false, index));
+                }
                 prompt("Press the enter key to continue.");
                 continue;
             case 5:
@@ -163,22 +166,32 @@ function selectFn(){
                 console.log("You have selected to provide a detailed description of a troupe.");
                 // Get troupe name (by index) by calling getTroupeName function
                 index = giveDescriptions.getTroupeName(troupes);
-                // Give title
-                console.clear();
-                console.log(`\nDetailed Description`);
-                // Get detailed description of the selected troupe by calling the
-                // giveSummaryDesc function
-                console.log(giveDescriptions.giveSummaryDesc(troupes, true, index));
+                // Check there are troupes available
+                if(index!=undefined){
+                    // Give title
+                    console.clear();
+                    console.log(`\nDetailed Description`);
+                    // Get detailed description of the selected troupe by calling the
+                    // giveSummaryDesc function
+                    console.log(giveDescriptions.giveSummaryDesc(troupes, true, index));
+                }
                 prompt("Press the enter key to continue.");
                 continue;
             case 6:
                 console.clear();
                 // Successful selection message:
-                console.log("You have selected to calculate the cost of deploying the troupe for a number of hours");
-                console.clear();
-                // Get cost of deployment through calling the calDepCost function:
-                calDepCost.calDepCost(troupes);
-                prompt("Press the enter key to continue.");
+                console.log("You have selected to calculate the cost of deploying the troupe for a number of hours.");
+                // Check there are troupes available:
+                if(troupes.length != 0){
+                    console.clear();
+                    // Get cost of deployment through calling the calDepCost function:
+                    calDepCost.calDepCost(troupes);
+                }
+                // Print error message if no troupes are available:
+                else{
+                    console.log("No troupes available. Please create a troupe to continue.")
+                }
+                prompt("\nPress the enter key to continue.");
                 continue;
             case 7:
                 console.clear();
@@ -187,7 +200,7 @@ function selectFn(){
                 console.clear();
                 // Read troupe names from a file using the readTroupeNames function
                 readTroupeNames.readTroupeNames(troupes);
-                prompt("Press the enter key to continue.");
+                prompt("\nPress the enter key to continue.");
                 continue;
             case 8:
                 console.clear();
@@ -197,8 +210,15 @@ function selectFn(){
                 // Write detailed descriptions of all troupes to file of given name
                 // by calling the writeFileDesc function
                 fileName = writeToFile.writeFileDesc(troupes);
-                console.log(`You have successfully written a list of the detailed descriptions for all troupes to a file called "${fileName}.txt".\n`);
-                prompt("Press the enter key to continue.");
+                // Check the function executes (i.e. there are troupes available)
+                if(fileName != undefined){
+                    console.log(`You have successfully written a list of the detailed descriptions for all troupes to a file called "${fileName}.txt".\n`);
+                }
+                // Give error message if no troupes available
+                else{
+                    console.log("No troupes available. Please create a troupe to continue.")
+                }
+                prompt("\nPress the enter key to continue.");
                 continue;
             case 9:
                 console.clear();
@@ -210,7 +230,7 @@ function selectFn(){
                 console.clear();
                 // Give error on invalid input:
                 console.log("Invalid input. Selection must be a number between 1-9.");
-                prompt("Press the enter key to continue.");
+                prompt("\nPress the enter key to continue.");
                 continue;
             }
         // Break out of while loop once switch break occurs:
