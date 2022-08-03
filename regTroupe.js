@@ -5,11 +5,12 @@ const {Troupe} = require('./Troupe');
 const prompt = require('prompt-sync')();
 
 // Function regTroupe takes user input to record their name, minimum duration and genre
-// Accepted parameters: 
+// Input parameter is the current array of Troupe objects
+// The function works by accepting the following user inputs:
     // name must be: between 3 and 30 characters (including)
     // minimum duration must be: a number between 0.5 and 3 hours
     // genre must be either: rock/jazz/pop
-// Returns the Troupe object that has been created
+// Returns the Troupe object that has been created (to be pushed to the troupes array)
 function regTroupe(troupes)
 {
     // Declare variables such that they are defined but invalid:
@@ -32,6 +33,7 @@ function regTroupe(troupes)
                 if(troupes[i].tName.toLowerCase() == t_name.toLowerCase()){
                     console.log("Troupe name already exists. Please try again.");
                     t_name = "";
+                    // Break to 'outer' label allows a 'double break'
                     break outer;
                 }
             }
