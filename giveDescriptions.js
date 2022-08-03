@@ -1,9 +1,9 @@
+// Import classes:
 const { Guitarist } = require('./Guitarist');
 const { Bassist } = require('./Bassist');
 const { Percussionist } = require('./Percussionist');
 const { Flautist } = require('./Flautist');
 const {Troupe} = require('./Troupe');
-const {Musician} = require('./Musician');
 
 // Access prompt-sync package for user input:
 const prompt = require('prompt-sync')();
@@ -17,11 +17,12 @@ function getTroupeName(troupes){
     let i;
     // While loop allows user unlimited attempts to enter a valid troupe name:
     while(true){
-        // Use for loop to show list of available troupe names to user:
+        // Error message if no available troupes
         if(troupes.length == 0){
             console.log("Please create a troupe to continue");
                 return;
         }
+        // Use for loop to show list of available troupe names to user:
         console.log("The current available troupes are: ");            
         for(let x=0; x<troupes.length; x++){
             console.log(`\t- ${troupes[x].tName}`);
@@ -36,6 +37,7 @@ function getTroupeName(troupes){
                 return i;
             }
         }
+        // Error message on invalid troupe selection:
         console.log ("\nInvalid selection. Please try again.\n");
     }
 }
@@ -58,6 +60,7 @@ function giveSummaryDesc(troupes, detailed, i){
     let count = [0,0,0,0];
     // For loop to append result with a list of troupe members name and instrument:
     result = result.concat(`Members: `);
+        // Check if there are members in the troupe (if not, give message of 'None'):
         if(troupes[i].tMembers.length == 0){
             result = result.concat(`None\n`);
         }
@@ -113,7 +116,8 @@ function giveDetailedDesc(troupes, i){
     for(let x=0; x<troupes[i].tMembers.length; x++){
         result = result.concat(`Hello, my name is ${troupes[i].tMembers[x].mName} and I am a ${troupes[i].tMembers[x].mInst}.\nI have been playing for ${troupes[i].tMembers[x].yrsPlaying} years and my hourly rate is $${troupes[i].tMembers[x].hrlyRate}/hr.\nHere's an interesting fact about ${troupes[i].tMembers[x].mInst}s:\n`);
      
-        // Get interesting fact depending on instrument:
+        // Get interesting fact depending on instrument using the giveInterestingFact method
+        // In the respective Musician subclasses: 
         switch(troupes[i].tMembers[x].mInst){
             case 'guitarist':
                 result = result.concat(Guitarist.prototype.giveInterestingFact.call(troupes[i].tMembers[x]));
@@ -132,7 +136,9 @@ function giveDetailedDesc(troupes, i){
                 break;
         }
     }
+    // Return concatenated string value
     return result;
 }
 
+// Export the functions:
 module.exports = {giveSummaryDesc, giveDetailedDesc, getTroupeName}
