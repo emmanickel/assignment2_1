@@ -1,9 +1,3 @@
-const { Guitarist } = require('./Guitarist');
-const { Bassist } = require('./Bassist');
-const { Percussionist } = require('./Percussionist');
-const { Flautist } = require('./Flautist');
-const { Musician } = require('./Musician');
-const {Troupe} = require('./Troupe');
 
 // Access prompt-sync package for user input:
 const prompt = require('prompt-sync')();
@@ -15,6 +9,7 @@ const fs = require('fs');
 let giveDescriptions = require('./giveDescriptions.js');
 
 function writeFileDesc(troupes){
+    // Get file name from user:
     let fileName = prompt("Please enter a file name: ");
     let description = '';
 
@@ -28,4 +23,5 @@ function writeFileDesc(troupes){
     return fileName;
 }
 
+// Export function:
 module.exports = {writeFileDesc}
