@@ -1,4 +1,5 @@
 class Troupe{
+    // Constructor sets the property tMembers as an array (which will contain all members of a particular troupe object)
     constructor(){
         this.tMembers = [];
     }
@@ -47,6 +48,10 @@ class Troupe{
             return this.mDur;
         }
 
+        // calHrlyRate function has no input parameters
+        // It calculates the hourly rate of the Troupe object it is called with
+        // by summing the hrly rates of the troupe members
+        // It returns the hrly rate as a number rounded to 2 decimal places:
         calHrlyRate(){
             let sum = 0;
             for(let i = 0; i<this.tMembers.length; i++){
@@ -58,6 +63,5 @@ class Troupe{
 
 }
 
-    
 // Export Troupe class:
 module.exports = {Troupe};
