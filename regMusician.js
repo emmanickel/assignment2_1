@@ -96,25 +96,6 @@ function regMusician(musicians)
         else{
             m_name = prompt("Enter the musician's name: ").trim();
             musi.musicianName = m_name;
-
-
-            // // // For loop checks musician name doesn't already exist:
-            // for(let i = 0; i < musicians.length; i++){
-            //     if(musicians[i].mName == m_name){
-            //         repeat = true;
-            //         break;
-            //     }
-            // }
-            // if(repeat == false)
-            // {
-            //     musi.musicianName = m_name;
-            // }
-            // else{
-            //     console.log("Musician name already exits. Please enter a new musician name.");
-            //     instrument = prompt("Please choose a type of instrumentalist (guitarist/bassist/percussionist/flautist): ").trim().toLowerCase();
-            //     break;
-            // }
-            // musi.musicianName = m_name;
         }
     }
     return(musi);
