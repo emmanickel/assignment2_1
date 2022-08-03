@@ -103,12 +103,14 @@ function addMusicianTroupe(musicians, troupes)
 function dispTroupeMembers(musicians, troupes){
     // Assign the parameters to the index array:
     let index = addMusicianTroupe(musicians, troupes);
-    // Let user know which musician was added to which troupe:
-    console.log(`Successfully added ${musicians[index[0]].mName} to ${troupes[index[1]].tName}.`);
-    // Use a for loop to print the current troupe members to the console:
-    console.log(`The current members of ${troupes[index[1]].tName} are:`);
-    for(let i = 0; i<troupes[index[1]].tMembers.length; i++){
-        console.log(`\t- ${troupes[index[1]].tMembers[i].mName}`);
+    if(index!=undefined){
+        // Let user know which musician was added to which troupe:
+        console.log(`Successfully added ${musicians[index[0]].mName} to ${troupes[index[1]].tName}.`);
+        // Use a for loop to print the current troupe members to the console:
+        console.log(`The current members of ${troupes[index[1]].tName} are:`);
+        for(let i = 0; i<troupes[index[1]].tMembers.length; i++){
+            console.log(`\t- ${troupes[index[1]].tMembers[i].mName}`);
+        }
     }
     // No return value:
     return;
