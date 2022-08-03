@@ -16,7 +16,7 @@ function readTroupeNames(troupes){
     let fileName;
     while(true){
     // Prompt the user to enter the filename (no extension required):
-     fileName = prompt("Please enter a file name to read (without the file extension): ");
+     fileName = prompt("Please enter a file name to read (without the file extension): ").trim().toLowerCase();
     // Read text file of given name using readFileSync():
     // Try/Catch statement checks the user inputs a valid file name (that already exists)
     try{
