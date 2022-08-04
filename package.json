@@ -1,0 +1,22 @@
+{
+  "name": "assignment2_1",
+  "version": "1.0.0",
+  "description": "MusoPlan Software for Globex Corporation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmanickel/assignment2_1.git"
+  },
+  "author": "Emma Nickel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmanickel/assignment2_1/issues"
+  },
+  "homepage": "https://github.com/emmanickel/assignment2_1#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
