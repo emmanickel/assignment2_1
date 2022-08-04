@@ -112,10 +112,5 @@ The application will operate from the command line, and upon startup will bring 
 <br>
 
 
-## How you tested your software (demonstrate)
-
-## How you fixed any defects discovered during testing
-
 ## Obtain user acceptance of your software
-
-## Final task sign off from use of VCS
+During the meeting, the MusoPlan software was demonstrated to the client, and all functionalities were successfully demonstrated. User acceptance was obtained.
