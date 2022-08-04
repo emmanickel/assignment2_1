@@ -43,6 +43,3 @@
 5. After executing the selected function, the application will return to the main menu (an indefinite number of times). Select the next chosen function by entering another number between 1 and 8. 
 
 <br>
-
-## Testing Instructions
-- ????
