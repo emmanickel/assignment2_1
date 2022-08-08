@@ -3,11 +3,12 @@ class Musician{
 // Getters and setters for musician instrument:
     set instument(inst){
         // Validate instrument is one of the given options
-        if(inst == 'guitarist' | inst == 'bassist' | inst == 'percussionist' | inst == 'flautist')
+        if(inst == 'guitarist' | inst == 'bassist' | inst == 'percussionist' | inst == 'flautist'){
             this.mInst = inst;
+        }
         // Give error on invalid input
         else{
-            console.log('Invalid input. Instrument must be either guitarist, bassist, percussionist or flautist.');
+            throw new Error ('Invalid input. Instrument must be either guitarist, bassist, percussionist or flautist.');
         }
     }
     get instument(){
@@ -57,6 +58,17 @@ class Musician{
     }
     get hourlyRate(){
         return this.hrlyRate;
+    }
+
+    // addMusician method pushes new Musician object
+    // to the musicians array:
+    // Takes input parameters:
+        // musicians array (of Musician objects)
+        // Musician object to push
+    // No return value
+    addMusician(musicians, musi){
+        musicians.push(musi);
+        return;
     }
 }
 
