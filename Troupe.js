@@ -61,6 +61,17 @@ class Troupe{
             return sum;
         }
 
+        // addTroupe function pushes the new troupe object
+        // To the troupes array
+        // Takes input parameters:
+            // troupes array (of Troupe objects)
+            // Troupe object to push
+        // No return value
+        addTroupe(troupes, troupe){
+            troupes.push(troupe);
+            return;
+        }
+
 }
 
 // Export Troupe class:
