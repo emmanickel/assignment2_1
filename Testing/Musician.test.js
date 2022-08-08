@@ -5,8 +5,10 @@ const {Musician} = require('../Musician.js');
     test('Musician instrument', () => {
             musi = new Musician();
             musi.instrument = 'guitarist';
-        expect(musi.employeeNo).toMatch('guitarist');
+        expect(musi.instrument).toMatch('guitarist');
     })
+    // Case 2: Edge Case
+    // Case 3: Corner Case
 
 // Unit test 2:
     // Case 1: Base Case
