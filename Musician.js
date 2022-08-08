@@ -3,7 +3,7 @@ class Musician{
 // Getters and setters for musician instrument:
     set instument(inst){
         // Validate instrument is one of the given options
-        if(inst != 'guitarist' | inst != 'bassist' | inst != 'percussionist' | inst != 'flautist')
+        if(inst == 'guitarist' | inst == 'bassist' | inst == 'percussionist' | inst == 'flautist')
             this.mInst = inst;
         // Give error on invalid input
         else{
