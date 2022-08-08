@@ -15,6 +15,7 @@ let giveDescriptions = require('./giveDescriptions.js');
 let calDepCost = require('./calDepCost.js');
 let readTroupeNames = require('./readTroupeNames.js');
 let writeToFile = require('./writeToFile.js');
+const { Musician } = require('./Musician.js');
 
 // Create global maps of musicians and troupes:
 const musicians = new Array();
@@ -114,9 +115,11 @@ function selectFn(){
                 console.clear();
                 // Successful selection message:
                 console.log("You have selected to register a musician.");
-                // Add a musician by calling the regMusician function and pushing
-                // the Musician object that is returned to the musicians array:
-                musicians.push(regMusician.regMusician(musicians));
+                // Create a musician by calling the regMusician function   
+                musi = regMusician.regMusician(musicians);
+                // Call the addMusician function of the Musician class
+                // to add the Musician object to the musicians array:
+                musi.addMusician(musicians, musi);
                 console.clear();
                 // Successful execution message:
                 console.log("You have successfully created a musician.");
@@ -126,9 +129,11 @@ function selectFn(){
                 console.clear();
                 // Successful selection message:
                 console.log("You have selected to register a troupe.\n");
-                // Add a troupe by calling the regTroupe function and pushing the 
-                // returned Troupe object to the array troupes:
-                troupes.push(regTroupe.regTroupe(troupes));
+                // Create a troupe by calling the regMusician function   
+                troupe = regTroupe.regTroupe(troupes);
+                // Call the addTroupe function of the Troupe class
+                // to add the Troupe object to the troupes array:
+                troupe.addTroupe(troupes, troupe);
                 console.clear();
                 console.log("You have successfully created a troupe.");
                 // Successful execution message:
