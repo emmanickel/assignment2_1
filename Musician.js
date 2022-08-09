@@ -1,7 +1,7 @@
 class Musician{
 
 // Getters and setters for musician instrument:
-    set instument(inst){
+    set instrument(inst){
         // Validate instrument is one of the given options
         if(inst == 'guitarist' | inst == 'bassist' | inst == 'percussionist' | inst == 'flautist'){
             this.mInst = inst;
@@ -11,7 +11,7 @@ class Musician{
             throw new Error ('Invalid input. Instrument must be either guitarist, bassist, percussionist or flautist.');
         }
     }
-    get instument(){
+    get instrument(){
         return this.mInst;
     }
 
@@ -24,7 +24,7 @@ class Musician{
         }
         // Error on invalid input
         else {
-            console.log('Invalid input. Musician name must be between 3 and 30 characters.');
+            throw new Error('Invalid input. Musician name must be between 3 and 30 characters.');
         }    
     }
     get musicianName(){
@@ -38,7 +38,7 @@ class Musician{
         }
         // Error on invalid input
         else {
-            console.log('Invalid input. Years playing must be a non-negative integer.');
+            throw new Error('Invalid input. Years playing must be a non-negative integer.');
         }
     }
     get yearsPlaying(){
@@ -53,7 +53,7 @@ class Musician{
         }
         // Error on invalid input
         else {
-            console.log('Invalid input. Hourly rate must be a number greater than 50.');
+            throw new Error('Invalid input. Hourly rate must be a number greater than 50.');
         }
     }
     get hourlyRate(){
