@@ -185,50 +185,50 @@ Automated testing will be conducted on the following classes within the MusoPlan
 
 <br>
 
-**Set musician instrument** (either guitarist/bassist/percussionist/flautist)
+**Unit test 1: Set musician instrument** (either guitarist/bassist/percussionist/flautist)
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "guitarist" | set | set | Pass  |
-| 2 (boundary??) | "Guitarist" | set | set | Pass  |
-| 3 (edge??) | "saxophonist" | throw error | throw error | Pass |
+| 2 (edge) | "saxophonist" | throw error | throw error | Pass |
 
 <br>
 
-**Set musician name** (between 3 and 30 characters
+**Unit test 2: Set musician name** (between 3 and 30 characters
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "Emma Nickel" | set | set | Pass  |
 | 2 (boundary value) | "Eli" | set | set | Pass  |
-| 3 (edge??) | "Em" | throw error | throw error | Pass |
+| 3 (edge) | "Em" | throw error | throw error | Pass |
 
 <br>
 
-**Set musician years playing** (non-negative)
+**Unit test 3: Set musician years playing** (non-negative)
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "5" | set | set | Pass  |
 | 2 (boundary value) | "0" | set | set | Pass  |
-| 3 (edge??) | "-1" | throw error | throw error | Pass |
-| 4 (edge??) | "Four" | throw error | throw error | Pass |
+| 3 (edge) | "-1" | throw error | throw error | Pass |
+| 4 (edge) | "Four" | throw error | throw error | Pass |
 
 <br>
 
-**Set musician hourly rate** (greater than 50)
+**Unit test 4: Set musician hourly rate** (greater than 50)
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "70" | set | set | Pass  |
 | 2 (boundary value) | "50" | set | set | Pass  |
-| 3 (edge??) | "49" | throw error | throw error | Pass |
-| 4 (edge??) | "Fifty-five" | throw error | throw error | Pass |
+| 3 (edge) | "49" | throw error | throw error | Pass |
+| 4 (edge) | "Fifty-five" | throw error | throw error | Pass |
 
 <br>
 
-**Add musician**
+**Unit test 5: Add musician**
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "musi = new Musician()" | musicians array length increases by one | musicians array length increases by one | Pass  |
-| 2 (edge) | NULL | throw error | throw error | Pass  |
-| 3 (edge) | "musi = Emma" | throw error | throw error | Pass  |
+| 2 (base) | "musi1 = new Musician() <br> musi2 = new Musician()" | musicians array length increases by two | musicians array length increases by two | Pass  |
+| 3 (edge) | NULL | throw error | throw error | Pass  |
+| 4 (edge) | "musi = Emma" | throw error | throw error | Pass  |
 
 <br>
 
@@ -236,83 +236,77 @@ Automated testing will be conducted on the following classes within the MusoPlan
 
 <br>
 
-**Set troupe name** (between 3 and 30 characters
+**Unit test 1: Set troupe name** (between 3 and 30 characters
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "The Strokes" | set | set | Pass  |
 | 2 (boundary value) | "The" | set | set | Pass  |
-| 3 (edge??) | "St" | throw error | throw error | Pass |
+| 3 (edge) | "St" | throw error | throw error | Pass |
 
 <br>
 
-**Set troupe minimum duration** (between 0.5 and 3 hours)
+**Unit test 2: Set troupe minimum duration** (between 0.5 and 3 hours)
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "2" | set | set | Pass  |
 | 2 (boundary value) | "0.5" | set | set | Pass  |
 | 3 (boundary value) | "3" | set | set | Pass  |
-| 4 (edge??) | "0" | throw error | throw error | Pass |
-| 5 (edge??) | "5" | throw error | throw error | Pass |
-| 6 (edge??) | "Three" | throw error | throw error | Pass |
+| 4 (edge) | "0" | throw error | throw error | Pass |
+| 5 (edge) | "5" | throw error | throw error | Pass |
+| 6 (edge) | "Three" | throw error | throw error | Pass |
 
 <br>
 
-**Set troupe genre** (either rock/jazz/pop)
+**Unit test 3: Set troupe genre** (either rock/jazz/pop)
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "rock" | set | set | Pass  |
-| 2 (boundary value) | "Rock" | set | set | Pass  |
-| 3 (edge??) | "Blues" | throw error | throw error | Pass |
-| 4 (edge??) | "" | throw error | throw error | Pass |
+| 2 (edge) | "Blues" | throw error | throw error | Pass |
+| 3 (edge) | "" | throw error | throw error | Pass |
 
 <br>
 
-**Calculate hourly rate**
+**Unit test 4: Calculate hourly rate**
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
-| 1 (base) | "troupe = new Troupe()" | hourly rate of troupe returned | hourly rate of troupe returned | Pass  |
-| 2 (edge) | NULL | throw error | throw error | Pass  |
+| 1 (base) | "troupe = new Troupe()" (contains two musicians) | hourly rate of troupe returned | hourly rate of troupe returned | Pass  |
+| 2 (edge) | Troupe contains no members | throw error | throw error | Pass  |
 
 <br>
 
-**Add troupe**
+**Unit test 5: Add troupe**
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "troupe = new Troupe()" | troupes array length increases by one | troupes array length increases by one | Pass  |
-| 2 (edge) | NULL | throw error | throw error | Pass  |
-| 3 (edge) | "troupe = The Strokes" | throw error | throw error | Pass |
+| 2 (base) | "troupe1 = new Troupe() <br> troupe2 = new Troupe()" | troupes array length increases by two | troupes array length increases by two | Pass  |
 
 <br> 
 
 ## Guitarist Class
-**Give interesting fact**
+**Unit test 1: Give interesting fact**
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "guitarist = new Guitarist()" | String returned matches | String returned matches | Pass  |
-| 2 (edge) | NULL | throw error | throw error | Pass  |
 
 <br> 
 
 ## Bassist Class
-**Give interesting fact**
+**Unit test 1: Give interesting fact**
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "bassist = new Bassist()" | String returned matches | String returned matches | Pass  |
-| 2 (edge) | NULL | throw error | throw error | Pass  |
 <br> 
 
 ## Percussionist Class
-**Give interesting fact**
+**Unit test 1: Give interesting fact**
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "percussionist = new Percussionist()" | String returned matches | String returned matches | Pass  |
-| 2 (edge) | NULL | throw error | throw error | Pass  |
 <br> 
 
 ## Flautist Class
-**Give interesting fact**
+**Unit test 1: Give interesting fact**
 | Case | Input | Expected Output | Actual Ouput | Pass/Fail |
 |---|---|---|---|---|
 | 1 (base) | "flautist = new Flautist()" | String returned matches | String returned matches | Pass  |
-| 2 (edge) | NULL | throw error | throw error | Pass  |
 
