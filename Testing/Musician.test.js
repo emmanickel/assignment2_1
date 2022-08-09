@@ -8,6 +8,12 @@ const {Musician} = require('../Musician.js');
         expect(musi.instrument).toMatch('guitarist');
     })
     // Case 2: Edge Case
+    test('Musician instrument', () => {     
+        expect(() => {
+        musi = new Musician();
+        musi.instrument = 'guitarisargrget';
+    }).toThrowError('Invalid input. Instrument must be either guitarist, bassist, percussionist or flautist.');
+    })
     // Case 3: Corner Case
 
 // Unit test 2:
