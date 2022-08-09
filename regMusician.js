@@ -3,6 +3,7 @@ const { Guitarist } = require('./Guitarist');
 const { Bassist } = require('./Bassist');
 const { Percussionist } = require('./Percussionist');
 const { Flautist } = require('./Flautist');
+const { Musician } = require('./Musician');
 
 // Access prompt-sync package for user input:
 const prompt = require('prompt-sync')();
@@ -50,7 +51,8 @@ function regMusician(musicians)
             default:
                 // If the input is invalid, an error is thrown and the while loop
                 // continues, allowing the user to re-enter input 
-                console.log("Invalid input. Instrument must be either guitarist, bassist, percussionist or flautist.");
+                musi = new Musician();
+                musi.instument = instrument;
                 continue;
         }
         break;
