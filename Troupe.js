@@ -11,7 +11,7 @@ class Troupe{
                 this.tName = name;
             // Give error on invalid input
             else{
-                console.log('Invalid input. Troupe name must be between 3 and 30 characters in length.');
+                throw new Error('Invalid input. Troupe name must be between 3 and 30 characters in length.');
             }
         }
         get troupeName(){
@@ -26,7 +26,7 @@ class Troupe{
             }
             // Error on invalid input
             else {
-                console.log('Invalid input. Genre must be either rock, jazz or pop.');
+                throw new Error('Invalid input. Genre must be either rock, jazz or pop.');
             }    
         }
         get troupeGenre(){
@@ -41,7 +41,7 @@ class Troupe{
             }
             // Error on invalid input
             else {
-                console.log('Invalid input. Minimum duration between 0.5 and 3 hours.');
+                throw new Error('Invalid input. Minimum duration between 0.5 and 3 hours.');
             }
         }
         get minDuration(){
@@ -58,7 +58,12 @@ class Troupe{
                 sum += Number(this.tMembers[i].hrlyRate);
             }
             sum = Math.round((sum + Number.EPSILON) * 100) / 100;
-            return sum;
+            if(sum >0){
+                return sum;
+            }
+            else{
+                throw new Error('There are no musicians in the troupe');
+            }
         }
 
         // addTroupe function pushes the new troupe object
