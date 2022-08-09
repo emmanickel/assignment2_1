@@ -77,11 +77,18 @@ const {Musician} = require('../Musician.js');
         musi.hourlyRate = '50';
     expect(musi.hourlyRate).toMatch('50');
     })
-    // Case 4: Edge Case
+    // Case 3: Edge Case
     test('Set Musician years playing as "49"', () => {
         expect(() => {
             musi = new Musician();
             musi.hourlyRate = '49';
+                }).toThrowError('Invalid input. Hourly rate must be a number greater than 50.');
+    })
+    // Case 4: Edge Case
+    test('Set Musician years playing as "Fifty-five"', () => {
+        expect(() => {
+            musi = new Musician();
+            musi.hourlyRate = 'Fifty-five';
                 }).toThrowError('Invalid input. Hourly rate must be a number greater than 50.');
     })
 
