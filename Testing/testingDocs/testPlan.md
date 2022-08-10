@@ -6,19 +6,13 @@
 
 ## Introduction
 
-Automated and manual testing will be conducted on the MusoPlan Software. The automated testing will be done using the npm framework Jest, with JUnit for reporting test results. Manual testing will be conducted through the command line and documented clearly according to the following test plan.
-
-- It is expected that the testing conducted will reveal any (although not all) defects in the software, allowing modifications to be made accordingly.
-
-- The data structures required during testing include
-
-- The scope for test cases include base cases, edge cases, boundary values and corner cases where applicable.
+Automated and manual testing will be conducted on the MusoPlan Software. The automated testing will be done using the npm framework Jest, with JUnit for reporting test results. Manual testing will be conducted through the command line and clearly documented. It is expected that the testing process will reveal any (although not all) defects in the software, allowing modifications to be made accordingly. During testing, data structures such as arrays of objects will be handled corresponding to the required input parameters of the methods being tested. The scope for test cases will include boundary values (case on edge of equivalence partitioning), base cases (expected input), edge cases (unexpected input), and corner cases (multiple unexpected inputs) where applicable.
 
 <br>
 
 ## Test Plan: Manual Testing
 
-The manual testing plan demonstrates the successful operation of 4 of the MusoPlan application's 8 functions by describing the expected outputs of the program in response to valid user inputs.
+The following manual test aims to demonstrate the successful operation of 4 of the MusoPlan application's 8 functions by describing the expected outputs of the program in response to valid user inputs.
 
 <br>
 
@@ -170,7 +164,7 @@ Automated testing will be conducted on the following classes within the MusoPlan
 2. One unit test will be conducted for each of the 'setter/getter' functions of the class, within which 4 test cases will be documented.
 3. One unit test will be conducted for each of the methods defined in the class, within which 4 test cases will be documented.
 
-*Note: Test cases will include boundary values (case on edge of equivalence partitioning), a base case (expected input), edge case (unexpected input), and corner case (multiple unexpected inputs) whereever possible.*
+*Note: Test cases will include boundary values (case on edge of equivalence partitioning), a base case (expected input), edge case (unexpected input), and corner case (multiple unexpected inputs) ver possible.*
 
 <br>
 
