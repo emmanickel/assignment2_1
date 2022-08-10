@@ -128,3 +128,6 @@ The automated tests outlined in the test plan were undertaken using the Jest fra
 
 ## Appendix
 [JUnit xml document](../../junit.xml) of the automated testing results.
+<br>
+
+[Formatted coverage report](../../coverage/lcov-report/index.html) of the automated testing results (open with Live Server).
