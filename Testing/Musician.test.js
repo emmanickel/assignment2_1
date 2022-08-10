@@ -8,6 +8,20 @@ const {Musician} = require('../Musician.js');
         expect(musi.instrument).toMatch('guitarist');
     })
     // Case 2: Edge Case
+    test('Set Musician instrument as "gitarust"', () => {     
+        expect(() => {
+        musi = new Musician();
+        musi.instrument = 'gitarust';
+            }).toThrowError('Invalid input. Instrument must be either guitarist, bassist, percussionist or flautist.');
+        })
+    // Case 3: Edge Case
+    test('Set Musician instrument as "guitarist and bassist"', () => {     
+        expect(() => {
+        musi = new Musician();
+        musi.instrument = 'guitarist and bassist';
+            }).toThrowError('Invalid input. Instrument must be either guitarist, bassist, percussionist or flautist.');
+        })
+    // Case 4: Edge Case
     test('Set Musician instrument as "saxophonist"', () => {     
         expect(() => {
         musi = new Musician();
@@ -33,6 +47,13 @@ const {Musician} = require('../Musician.js');
         expect(() => {
         musi = new Musician();
         musi.musicianName = 'Em';
+            }).toThrowError('Invalid input. Musician name must be between 3 and 30 characters.');
+        })
+    // Case 4: Edge Case
+    test('Set Musician Name as "Salvador Felipe Jacinto Dali y Domenech"', () => {     
+        expect(() => {
+        musi = new Musician();
+        musi.musicianName = 'Salvador Felipe Jacinto Dali y Domenech';
             }).toThrowError('Invalid input. Musician name must be between 3 and 30 characters.');
         })
 
@@ -78,14 +99,14 @@ const {Musician} = require('../Musician.js');
     expect(musi.hourlyRate).toMatch('50');
     })
     // Case 3: Edge Case
-    test('Set Musician years playing as "49"', () => {
+    test('Set Musician hourly rate as "49"', () => {
         expect(() => {
             musi = new Musician();
             musi.hourlyRate = '49';
                 }).toThrowError('Invalid input. Hourly rate must be a number greater than 50.');
     })
     // Case 4: Edge Case
-    test('Set Musician years playing as "Fifty-five"', () => {
+    test('Set Musician hourly rate as "Fifty-five"', () => {
         expect(() => {
             musi = new Musician();
             musi.hourlyRate = 'Fifty-five';
@@ -108,4 +129,34 @@ const {Musician} = require('../Musician.js');
         musi1.addMusician(musicians, musi1);
         musi2.addMusician(musicians, musi2);
     expect(musicians.length).toEqual(2);
+    })
+    // Case 3: Base Case
+    test('Create ten new musicians', () => {
+        const musicians = new Array();
+        musi1 = new Musician();
+        musi2 = new Musician();
+        musi3 = new Musician();
+        musi4 = new Musician();
+        musi5 = new Musician();
+        musi6 = new Musician();
+        musi7 = new Musician();
+        musi8 = new Musician();
+        musi9 = new Musician();
+        musi10 = new Musician();
+        musi1.addMusician(musicians, musi1);
+        musi2.addMusician(musicians, musi2);
+        musi1.addMusician(musicians, musi3);
+        musi2.addMusician(musicians, musi4);
+        musi1.addMusician(musicians, musi5);
+        musi2.addMusician(musicians, musi6);
+        musi1.addMusician(musicians, musi7);
+        musi2.addMusician(musicians, musi8);
+        musi1.addMusician(musicians, musi9);
+        musi2.addMusician(musicians, musi10);
+    expect(musicians.length).toEqual(10);
+    })
+    // Case 4: Base Case
+    test('No new musician added', () => {
+        const musicians = new Array();
+    expect(musicians.length).toEqual(0);
     })
