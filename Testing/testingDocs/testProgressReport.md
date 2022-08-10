@@ -2,26 +2,14 @@
 
 ### Emma Nickel
 
-*Run your automated tests, and perform any other testing from your test plan, record the results in a test progress report (markdown file) that should include:*
+<br>
 
-- The date of execution
-- Test cases, which should include:
-    - User requirement being tested
-    - Inputs required to test functionality
-    - Expected outcome of the test
-- Any defects identified during testing
-- Strategies for amending defects
-- Test coverage for the project
-- An appending with a JUnit XML document
+## Manual Testing Results
 
+The following four manual unit tests were conducted on the MusoPlan software to ensure the subsystems within the program interact cohesively as a whole.
 
-## Manual Testing Results:
-- Create musician => success
-- Create troupe => success
-- Add musician to troupe => success
-    => error (non-musician, non-troupe)
-- Provide summary description of troupe => success
-    => error (non-troupe)
+<br>
+
 ## Unit Test 1: Create a musician
 
 **Testing instructions:**
@@ -42,6 +30,7 @@
 | `'1'` <br> `->'guitarist'` <br> `->'Emma'` <br> `->'-4'` | `'Invalid input. Years playing must be a non-negative integer.'` |  `'Invalid input. Years playing must be a non-negative integer.'` |
 | `'1'` <br> `->'guitarist'` <br> `->'Emma'` <br> `->'4'`<br> `->'40'` | `'Invalid input. Hourly rate must be a number greater than 50.'` |  `'Invalid input. Hourly rate must be a number greater than 50.'` |
 
+*Test conducted at 12pm AEST on 10/08/22*
 <br>
 
 ## Unit Test 2: Create a troupe
@@ -62,6 +51,7 @@
 | `'2'` <br> `->'Pink Floyd'` <br> `->'5'` | `'Invalid input. Minimum duration between 0.5 and 3 hours.'` | `'Invalid input. Minimum duration between 0.5 and 3 hours.'` |
 | `'2'` <br> `->'Pink Floyd'` <br> `->'0.75'` <br> `->'country'` | `'Invalid input. Genre must be either rock, jazz or pop.'` |  `'Invalid input. Genre must be either rock, jazz or pop.'` |
 
+*Test conducted at 12pm AEST on 10/08/22*
 <br>
 
 ## Unit Test 3: Add a musician to a troupe
@@ -82,6 +72,7 @@
 | `'3'` <br> `->'Jack'` <br> `->'The Strokes'` <br> (6th member addition) | `'This troupe is full. Please select another troupe.'` |`'This troupe is full. Please select another troupe.'` | 
 | `'3'` <br> `->'Emma'` <br> `->'The Strokes'` <br> (Repeat addition) | `'Emma is already a member of The Strokes. Please select another musician.'` |`'Emma is already a member of The Strokes. Please select another musician.'` | 
 
+*Test conducted at 12pm AEST on 10/08/22*
 <br>
 
 ## Unit Test 4: Provide a summary description of a troupe
@@ -100,6 +91,7 @@
 | `'4'` <br> `->'Non-existent troupe'` | `'Invalid selection. Please try again.'` |`'Invalid selection. Please try again.'`|
 | `'4'` <br> `->'MGMT'` <br> (Troupe containing no members) | `'Summary Description ` <br> `==============================` <br> `Troupe name: MGMT` <br> `==============================` <br> `Members: None` <br> `Genre: rock` <br> `Minimum duration: 3 hours` <br> `Hourly rate: $0/hr'` | `'Summary Description ` <br> `==============================` <br> `Troupe name: MGMT` <br> `==============================` <br> `Members: None` <br> `Genre: rock` <br> `Minimum duration: 2 hours` <br> `Hourly rate: $0/hr'` | 
 
+*Test conducted at 12pm AEST on 10/08/22*
 <br>
 
 ## Unit Test 5: Calculate the cost of deploying the troupe for a number of hours
@@ -118,8 +110,17 @@
 | `'6'` <br> `->'The Strokes'` <br> `->3` <br> | `'Cost of deployment of the strokes for 3 hours is: $375.'` |`'Cost of deployment of the strokes for 3 hours is: $375.'` |
 | `'6'` <br> `->'The Strokes'` <br> `->4` | `'Invalid number of hours. Please give a number of hours between 2 and 3.' ` | `'Invalid number of hours. Please give a number of hours between 2 and 3.' `| 
 
+*Test conducted at 12pm AEST on 10/08/22*
+<br>
 <br>
 
-## Automated Testing
+## Automated Testing Results
 
-![](testCoverage.jpg)
+As can be observed in the following screenshots, the MusoPlan software has 100% coverage of functions tested by automated testing.
+
+![Screenshot of Jest test results](./jestScreenshots/jest1.jpg)
+![Screenshot of Jest test results](./jestScreenshots/jest2.jpg)
+![Screenshot of Jest test results](./jestScreenshots/jest3.jpg)
+
+## Appendix
+[JUnit xml document](../../junit.xml) of the automated testing results.
