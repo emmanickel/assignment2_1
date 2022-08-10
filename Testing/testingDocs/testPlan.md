@@ -18,7 +18,7 @@ Automated and manual testing will be conducted on the MusoPlan Software. The aut
 
 ## Test Plan: Manual Testing
 
-The proposed test plan steps are as follows:
+The manual testing plan demonstrates the successful operation of 4 of the MusoPlan application's 8 functions by describing the expected outputs of the program in response to valid user inputs.
 
 <br>
 
@@ -54,8 +54,6 @@ After entering the above input values, the following output will display in the 
 
 > You have successfully created a musician. <br> <br> Press the enter key to continue.
 
-*Test conducted at 12pm on 10/08/22*
-
 <br>
 
 **Identifier:** Test 2
@@ -89,8 +87,6 @@ After entering the above input values, the following output will display in the 
 
 > You have successfully created a troupe. <br> <br> Press the enter key to continue. 
 
-*Test conducted at 12pm on 10/08/22*
-
 <br>
 
 **Identifier:** Test 3
@@ -121,8 +117,6 @@ User must be able to add a musician to a troupe using prompts given in the comma
 After entering the above input values, the following output will display in the command line, indicating success.
 
 > Successfully added Emma Nickel to The Strokes. <br> The current members of The Strokes are: <br> - Emma Nickel <br> <br> Press the enter key to continue.
-
-*Test conducted at 12pm on 10/08/22*
 
 <br>
 
@@ -155,8 +149,6 @@ After entering the above input values, the following output will display in the 
 
 > Summary Description <br> ============================== <br> Troupe name: The Strokes <br> ============================== <br> Members: <br> - Emma Nickel <br> Instruments: <br> - Guitarists: 1 <br> - Bassists: 0 <br> - Percussionists: 0 <br> - Flautists: 0 <br> Genre: rock <br> Minimum duration: 2.25 hours <br> Hourly rate: $65/hr <br> <br> Press the enter key to continue.
 
-*Test conducted at 12pm on 10/08/22*
-
 <br>
 
 ## Test Plan: Automated Testing Using Jest Framework
@@ -167,17 +159,31 @@ Automated testing will be conducted on the following classes within the MusoPlan
 
 - Troupe Class
 - Musician Class
-- Guitarist Class
-- Bassist Class
-- Percussionist Class
-- Flautist Class
+- Child Classes of the Musician Class:
+    - Guitarist Class
+    - Bassist Class
+    - Percussionist Class
+    - Flautist Class
 
-**Process for automated testing:**
-1. After installing the npm packages 'Jest' and 'jest-junit', a JS test file corresponding to each Class will be created.
-2. For each of the 'setter/getter' functions of the class, one unit test will be conducted, within which 3-4 test cases (including a base case, edge case and boundary values) will be documented.
-3. For each of the class methods, one unit test will be conducted, within which 2-4 test cases (including a base case, edge case and boundary values) will be documented.
-4. The success of these tests will be demonstrated by running the Jest framework through the command line. 
-5. The Junit xml document produced as a result of the testing will be included in the test progress report.
+**Setup instructions for automated testing:**
+1. After installing the npm packages 'Jest' and 'jest-junit', a JS test file corresponding to each class will be created (6 files total) using the naming convention *className.test.js*.
+2. One unit test will be conducted for each of the 'setter/getter' functions of the class, within which 4 test cases will be documented.
+3. One unit test will be conducted for each of the methods defined in the class, within which 4 test cases will be documented.
+
+*Note: Test cases will include boundary values (case on edge of equivalence partitioning), a base case (expected input), edge case (unexpected input), and corner case (multiple unexpected inputs) whereever possible.*
+
+<br>
+
+**Execution steps for automated testing:** 
+
+*Note: The execution steps required are identical for all automated tests. Screenshots of CLI output as well as JUnit xml report will be included in Test Progress Report.*
+
+1. To run Jest automated testing, run the following command in the terminal:
+
+        npm run test-coverage
+ 
+2. Observe the results and coverage of testing returned in the command line.
+3. Access the Junit xml document (*junit.xml*) produced as a result of the testing from the current working directory.
 
 <br>
 
@@ -186,49 +192,52 @@ Automated testing will be conducted on the following classes within the MusoPlan
 <br>
 
 **Unit test 1: Set musician instrument** (either guitarist/bassist/percussionist/flautist)
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "guitarist" | set | set | Pass  |
-| 2 (edge) | "saxophonist" | throw error | throw error | Pass |
+| Case | Input Values | Expected Output |
+|---|---|---|
+| 1 | "guitarist" | set | 
+| 2 | "gitarust" | throw error |
+| 3 | "guitarist and bassist" | throw error |
+| 4 | "saxophonist" | throw error |
 
 <br>
 
 **Unit test 2: Set musician name** (between 3 and 30 characters
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "Emma Nickel" | set | set | Pass  |
-| 2 (boundary value) | "Eli" | set | set | Pass  |
-| 3 (edge) | "Em" | throw error | throw error | Pass |
+| Case | Input | Expected Output |
+|---|---|---|
+| 1 | "Emma Nickel" | set |
+| 2 | "Eli" | set | 
+| 3 | "Em" | throw error |
+| 4 | "Salvador Felipe Jacinto Dali y Domenech" | throw error |
 
 <br>
 
 **Unit test 3: Set musician years playing** (non-negative)
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "5" | set | set | Pass  |
-| 2 (boundary value) | "0" | set | set | Pass  |
-| 3 (edge) | "-1" | throw error | throw error | Pass |
-| 4 (edge) | "Four" | throw error | throw error | Pass |
+| Case | Input | Expected Output | 
+|---|---|---|
+| 1 | "5" | set | 
+| 2 | "0" | set |
+| 3 | "-1" | throw error | 
+| 4 | "Four" | throw error | 
 
 <br>
 
 **Unit test 4: Set musician hourly rate** (greater than 50)
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "70" | set | set | Pass  |
-| 2 (boundary value) | "50" | set | set | Pass  |
-| 3 (edge) | "49" | throw error | throw error | Pass |
-| 4 (edge) | "Fifty-five" | throw error | throw error | Pass |
+| Case | Input | Expected Output | 
+|---|---|---|
+| 1 | "70" | set |
+| 2 | "50" | set |
+| 3 | "49" | throw error | 
+| 4 | "Fifty-five" | throw error |
 
 <br>
 
 **Unit test 5: Add musician**
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "musi = new Musician()" | musicians array length increases by one | musicians array length increases by one | Pass  |
-| 2 (base) | "musi1 = new Musician() <br> musi2 = new Musician()" | musicians array length increases by two | musicians array length increases by two | Pass  |
-| 3 (edge) | NULL | throw error | throw error | Pass  |
-| 4 (edge) | "musi = Emma" | throw error | throw error | Pass  |
+| Case | Input | Expected Output | 
+|---|---|---|
+| 1 | "musi = new Musician()" | musicians array length increases by one | 
+| 2 | "musi1 = new Musician() <br> musi2 = new Musician()" | musicians array length increases by two | 
+| 3 | "musi1 = new Musician() <br> musi2 = new Musician() <br> musi3 = new Musician()<br> musi4 = new Musician() <br> ......... <br> musi10 = new Musician() " | musicians array length increases by 10 | 
+| 4 | No new musician added | musicians array length does not increase | 
 
 <br>
 
@@ -237,76 +246,84 @@ Automated testing will be conducted on the following classes within the MusoPlan
 <br>
 
 **Unit test 1: Set troupe name** (between 3 and 30 characters
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "The Strokes" | set | set | Pass  |
-| 2 (boundary value) | "The" | set | set | Pass  |
-| 3 (edge) | "St" | throw error | throw error | Pass |
+| Case | Input | Expected Output |
+|---|---|---|
+| 1 | "The Strokes" | set |
+| 2 | "The" | set |
+| 3 | "St" | throw error |
+| 4 | "Extremely tremendously very very long troupe name" | throw error |
 
 <br>
 
 **Unit test 2: Set troupe minimum duration** (between 0.5 and 3 hours)
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "2" | set | set | Pass  |
-| 2 (boundary value) | "0.5" | set | set | Pass  |
-| 3 (boundary value) | "3" | set | set | Pass  |
-| 4 (edge) | "0" | throw error | throw error | Pass |
-| 5 (edge) | "5" | throw error | throw error | Pass |
-| 6 (edge) | "Three" | throw error | throw error | Pass |
+| Case | Input | Expected Output | 
+|---|---|---|
+| 1 | "2" | set |
+| 2 | "0.5" | set | 
+| 3 | "3" | set |
+| 4 | "0" | throw error |
+| 5 | "5" | throw error | 
+| 6 | "Three" | throw error | 
 
 <br>
 
 **Unit test 3: Set troupe genre** (either rock/jazz/pop)
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "rock" | set | set | Pass  |
-| 2 (edge) | "Blues" | throw error | throw error | Pass |
-| 3 (edge) | "" | throw error | throw error | Pass |
+| Case | Input | Expected Output | 
+|---|---|---|
+| 1 | "rock" | set | 
+| 2 | "rok" | throw error | 
+| 3 | "Blues" | throw error |
+| 4 | "" | throw error | 
 
 <br>
 
 **Unit test 4: Calculate hourly rate**
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "troupe = new Troupe()" (contains two musicians) | hourly rate of troupe returned | hourly rate of troupe returned | Pass  |
-| 2 (edge) | Troupe contains no members | throw error | throw error | Pass  |
+| Case | Input | Expected Output | 
+|---|---|---|
+| 1 | Troupe containing two members | hourly rate of troupe returned |
+| 2 | Troupe containing five members | hourly rate of troupe returned |
+| 3 | Troupe contains no members | throw error | 
 
 <br>
 
 **Unit test 5: Add troupe**
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "troupe = new Troupe()" | troupes array length increases by one | troupes array length increases by one | Pass  |
-| 2 (base) | "troupe1 = new Troupe() <br> troupe2 = new Troupe()" | troupes array length increases by two | troupes array length increases by two | Pass  |
+| Case | Input | Expected Output |
+|---|---|---|
+| 1 | "troupe = new Troupe()" | troupes array length increases by 1 | 
+| 2 | "troupe1 = new Troupe() <br> troupe2 = new Troupe()" | troupes array length increases by 2 | 
+| 3 | "troupe1 = new Troupe() <br> troupe2 = new Troupe() <br> troupe3 = new Troupe() <br> troupe4 = new Troupe() <br> ......... <br> troupe10 = new Troupe() " | troupes array length increases by 10 | 
+| 4 | No new troupe added | troupes array length does not increase | 
 
 <br> 
 
 ## Guitarist Class
+
+*Note: Tests conducted on the child classes of the Musician class (Guitarist, Bassist, Percussionist and Flautist classes) were virtually identical as each of these classes only contained the method `giveInterestingFact()`. Since the method takes no input parameters and simply returns a string, only one test case could be conducted for each.*
+
 **Unit test 1: Give interesting fact**
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "guitarist = new Guitarist()" | String returned matches | String returned matches | Pass  |
+| Case | Input | Expected Output | 
+|---|---|---|
+| 1 | "guitarist = new Guitarist()" | String returned matches | 
 
 <br> 
 
 ## Bassist Class
 **Unit test 1: Give interesting fact**
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "bassist = new Bassist()" | String returned matches | String returned matches | Pass  |
+| Case | Input | Expected Output | 
+|---|---|---|
+| 1 | "bassist = new Bassist()" | String returned matches | 
 <br> 
 
 ## Percussionist Class
 **Unit test 1: Give interesting fact**
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "percussionist = new Percussionist()" | String returned matches | String returned matches | Pass  |
+| Case | Input | Expected Output | 
+|---|---|---|
+| 1 | "percussionist = new Percussionist()" | String returned matches |
 <br> 
 
 ## Flautist Class
 **Unit test 1: Give interesting fact**
-| Case | Input | Expected Output | Actual Ouput | Pass/Fail |
-|---|---|---|---|---|
-| 1 (base) | "flautist = new Flautist()" | String returned matches | String returned matches | Pass  |
+| Case | Input | Expected Output | 
+|---|---|---|
+| 1 | "flautist = new Flautist()" | String returned matches | 
 
