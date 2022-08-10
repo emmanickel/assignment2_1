@@ -1,69 +1,52 @@
 # Final Meeting Minutes
 ### Emma Nickel
 
+<br>
+
 *Hold a meeting with the product manager for MusoPlan to discuss the test progress report, be sure to discuss:*
 
 ## How your test plan fits into the SDLC
 
-SDLC Phases:
-1. Planning
-    - Reading the project brief 
-    - Obtaining clarity on the problem as a whole
-    - Understanding overall project objectives
-2. Analysis
-    - Problem details analysed in detail
-    - Breaking the problem down into subsystems
-3. Design
-    - Come up with solutions to each subsystem's requirements
-    - Ensure subsystems will work cohesively to solve the problem
-4. Implementation
-    - Writing the code for the software
-    - Committing all changes to VCS with descriptions
-5. Testing
-    - Find defects in behaviour - find every way that code doesn't work
-    - Expected vs actual output
-6. Deployment
-    - Let software 'loose' into the world/public
-7. Maintenance
-    - Fixing any issues/bugs that emerge once project has been deployed
+- The Software Development Life Cycle (SDLC) of the MusoPlan project follows the iterative Waterfall model, where phases are repeated until the newly developed feature is considered suitable. Once the feature is successfully completed the project moves sequentially onto the next phase.
+- This model enables more flexibility and adaptability compated to the otherwise rigid Waterfall structure.
+- Ideally, in this model testing would be primariliy conducted in parallel to the software implementation. Frequent testing during the implementation phase would ensure each completed feature is error-free and fully-functioning before moving on to the next.
+- While manual testing was conducted during implementation phases to minimise the accumulation of bugs, the automated testing aspect was not implemented until the software was completely developed.
+- In future, automated testing will take place during the implementation phase to reduce the chances a catastrophic failure occurring during project deployment and maintenance phases. In turn, this will minimise project costs and time.
+
+<br>
 
 ## How your test cases relate to the requirements identified in activity 1
+The testing requirements that were identified in activity 1 were:
 
+- All automated testing is to be done using Jest, and must have over 75% coverage of functions.
+> This was achieved (100% coverage of functions)
+- The test progress report must include an appendix with a JUnit xml document of the automated testing results
+> JUnit xml document linked in appendix of progress report
+- All manual test instructions must be clear enough for anyone to follow and verify the software
+> Detailed instructions were provided (including setup instructions)
+- The software test plan include:
+    - Automatic unit testing
+    - Manual unit testing 
+    - Manual system testing of the program
+    - Test cases with purposefully invalid, incorrect, or malformed inputs
+> All of the above were included in the test plan
 
-**1.	User input through the command line:**
--	Taking user input through the command line is the most suitable and efficient option considering the project budget. A GUI may be developed later if budget and time frame allow.
--	All prompts displayed in the user interface are to be detailed and in full sentences. 
--	All 8 functions of the application are to be listed in a numbered menu for the user to select from by entering the number corresponding to their chosen function.
+<br>
 
-**2.	Confirmation of user input conditions:**
--	The input conditions outlined in the brief were clarified to be:
-    -	Musician data requirements:
-        -	Name between 3 and 30 characters (`name.length >= 3 && name.length <= 30`)
-        -	Must play one (only one) of the four instruments: Guitar, Bass, Percussion or Flute (`inst == 'Guitar' | inst == ‘Bass’ | inst == ‘Percussion’ | inst == ‘Flute’`)  
-        -	Years playing must be non-negative (`years_playing >= 0`)
-        -	Hourly rate must be greater than or equal to $50 (`hrly_rate >= 50`)
-    -	Troupe data requirements:
-        -	Name between 3 and 30 characters (`name.length >= 3 && name.length <= 30`)
-        -	No more than 5 musicians (`troupeName.members.length <= 5`) and can have multiple of the same instrument
-        -	Valid genre from three choices: rock, jazz, pop (`genre == ‘rock’ | genre == ‘jazz’ | genre == ‘pop’`) 
-        -	Minimum duration in hours between 0.5 and 3 (`minDur >= 0.5 && minDur <= 3`)
--	A detailed error message is to be displayed to the if they enter invalid input, and unlimited attempts are to be given.
+## Produce and save test progress reports
+The test progress report can be accessed [here](./testProgressReport.md).
 
-**3.	Format of file input of troupe names:** 
--	The list of troupe names provided in the file will be separated line-by-line.
+<br>
 
-**4.	Outputs to user through the command line and to file:**
--	User outputs through the command line will be given line-by-line and in full sentences explaining the meaning of the output.
--	Only the 8 listed functionalities of the application are to be implemented. No extra functions are required.
--	The detailed description of all troupes is to be sent to a single file named troupeName.txt, and the text should be separated line-by-line, with a blank line separating each troupe.
+## Manage defects and review software, amending further defects
+- Any defects identified during the manual and automated testing process were resolved immediately.
+- The code is by no means 'bug-free', however it functions successfully according to client requirements and no catastrophic errors have been observed.
+- There is always room to improve software, according to budget and time constraints. For example, by:
+    - Adding GUI to improve UX
+    - Modifying code to ensure maximum efficiency
+    - Adding more functions to the application
 
-**5.	Overall operational features of the application:**
--	Once the user finishes executing a functionality through the app the menu is to be displayed again (an infinite number of times) so they can choose to execute another functionality of the application.
--	A 9th option will be added to the menu list which allows the user to exit the program.
-
-## Any defects identified and strategies for managing them
-
-<br> 
+<br>
 
 *Add the minutes of the meeting to the test directory in your MusoPlan repository, and ensure all your testing related branches have been merged back into the main branch in compliance with organisational requirements.*
 
