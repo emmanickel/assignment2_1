@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="45" failures="0" errors="0" time="1.827">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-10T04:35:58" time="0.456" tests="20">
+    <testcase classname=" Set Musician instrument as &quot;guitarist&quot;" name=" Set Musician instrument as &quot;guitarist&quot;" time="0.002">
+    </testcase>
+    <testcase classname=" Set Musician instrument as &quot;gitarust&quot;" name=" Set Musician instrument as &quot;gitarust&quot;" time="0.011">
+    </testcase>
+    <testcase classname=" Set Musician instrument as &quot;guitarist and bassist&quot;" name=" Set Musician instrument as &quot;guitarist and bassist&quot;" time="0.001">
+    </testcase>
+    <testcase classname=" Set Musician instrument as &quot;saxophonist&quot;" name=" Set Musician instrument as &quot;saxophonist&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Musician name as &quot;Emma Nickel&quot;" name=" Set Musician name as &quot;Emma Nickel&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Musician name as &quot;Eli&quot;" name=" Set Musician name as &quot;Eli&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Musician Name as &quot;Em&quot;" name=" Set Musician Name as &quot;Em&quot;" time="0.001">
+    </testcase>
+    <testcase classname=" Set Musician Name as &quot;Salvador Felipe Jacinto Dali y Domenech&quot;" name=" Set Musician Name as &quot;Salvador Felipe Jacinto Dali y Domenech&quot;" time="0.001">
+    </testcase>
+    <testcase classname=" Set Musician years playing as &quot;5&quot;" name=" Set Musician years playing as &quot;5&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Musician years playing as &quot;0&quot;" name=" Set Musician years playing as &quot;0&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Musician years playing as &quot;-1&quot;" name=" Set Musician years playing as &quot;-1&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Musician years playing as &quot;Four&quot;" name=" Set Musician years playing as &quot;Four&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Musician hourly rate as &quot;70&quot;" name=" Set Musician hourly rate as &quot;70&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Musician hourly rate as &quot;50&quot;" name=" Set Musician hourly rate as &quot;50&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Musician hourly rate as &quot;49&quot;" name=" Set Musician hourly rate as &quot;49&quot;" time="0.001">
+    </testcase>
+    <testcase classname=" Set Musician hourly rate as &quot;Fifty-five&quot;" name=" Set Musician hourly rate as &quot;Fifty-five&quot;" time="0.001">
+    </testcase>
+    <testcase classname=" Create one new musician" name=" Create one new musician" time="0.001">
+    </testcase>
+    <testcase classname=" Create two new musicians" name=" Create two new musicians" time="0">
+    </testcase>
+    <testcase classname=" Create ten new musicians" name=" Create ten new musicians" time="0">
+    </testcase>
+    <testcase classname=" No new musician added" name=" No new musician added" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-10T04:35:58" time="0.248" tests="21">
+    <testcase classname=" Set Troupe name as &quot;The Strokes&quot;" name=" Set Troupe name as &quot;The Strokes&quot;" time="0.002">
+    </testcase>
+    <testcase classname=" Set Troupe name as &quot;The&quot;" name=" Set Troupe name as &quot;The&quot;" time="0.001">
+    </testcase>
+    <testcase classname=" Set Troupe Name as &quot;St&quot;" name=" Set Troupe Name as &quot;St&quot;" time="0.012">
+    </testcase>
+    <testcase classname=" Set Troupe Name as &quot;Extremely tremendously very very long troupe name&quot;" name=" Set Troupe Name as &quot;Extremely tremendously very very long troupe name&quot;" time="0.001">
+    </testcase>
+    <testcase classname=" Set Troupe minimum duration as &quot;2&quot;" name=" Set Troupe minimum duration as &quot;2&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Troupe minimum duration as &quot;0.5&quot;" name=" Set Troupe minimum duration as &quot;0.5&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Troupe minimum duration as &quot;3&quot;" name=" Set Troupe minimum duration as &quot;3&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Troupe minimum duration as &quot;0&quot;" name=" Set Troupe minimum duration as &quot;0&quot;" time="0.001">
+    </testcase>
+    <testcase classname=" Set Troupe minimum duration as &quot;5&quot;" name=" Set Troupe minimum duration as &quot;5&quot;" time="0.001">
+    </testcase>
+    <testcase classname=" Set Troupe minimum duration as &quot;Three&quot;" name=" Set Troupe minimum duration as &quot;Three&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Troupe genre as &quot;rock&quot;" name=" Set Troupe genre as &quot;rock&quot;" time="0">
+    </testcase>
+    <testcase classname=" Set Troupe genre as &quot;rok&quot;" name=" Set Troupe genre as &quot;rok&quot;" time="0.001">
+    </testcase>
+    <testcase classname=" Set Troupe genre as &quot;Blues&quot;" name=" Set Troupe genre as &quot;Blues&quot;" time="0.001">
+    </testcase>
+    <testcase classname=" Set Troupe genre as &quot;&quot;" name=" Set Troupe genre as &quot;&quot;" time="0">
+    </testcase>
+    <testcase classname=" Calculate hourly rate of troupe containing two musicians" name=" Calculate hourly rate of troupe containing two musicians" time="0.001">
+    </testcase>
+    <testcase classname=" Calculate hourly rate of troupe containing five musicians" name=" Calculate hourly rate of troupe containing five musicians" time="0.001">
+    </testcase>
+    <testcase classname=" Calculate hourly rate of troupe containing no members" name=" Calculate hourly rate of troupe containing no members" time="0">
+    </testcase>
+    <testcase classname=" Create one new troupe" name=" Create one new troupe" time="0">
+    </testcase>
+    <testcase classname=" Create two new troupes" name=" Create two new troupes" time="0">
+    </testcase>
+    <testcase classname=" Create ten new troupes" name=" Create ten new troupes" time="0.009">
+    </testcase>
+    <testcase classname=" No new troupe added" name=" No new troupe added" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-10T04:35:59" time="0.213" tests="1">
+    <testcase classname=" Give interesting fact about bassist" name=" Give interesting fact about bassist" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-10T04:35:59" time="0.207" tests="1">
+    <testcase classname=" Give interesting fact about percussionist" name=" Give interesting fact about percussionist" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-10T04:35:59" time="0.244" tests="1">
+    <testcase classname=" Give interesting fact about flautist" name=" Give interesting fact about flautist" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2022-08-10T04:35:59" time="0.215" tests="1">
+    <testcase classname=" Give interesting fact about guitarist" name=" Give interesting fact about guitarist" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>
