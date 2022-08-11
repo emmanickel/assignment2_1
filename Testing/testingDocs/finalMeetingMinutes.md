@@ -3,9 +3,16 @@
 
 <br>
 
-*Hold a meeting with the product manager for MusoPlan to discuss the test progress report, be sure to discuss:*
+The following points were discussed during the final meeting with the MusoPlan product manager.
 
-## How your test plan fits into the SDLC
+<br>
+
+## Challenges faced during testing
+Since the automated testing setup and process was only learned once the MusoPlan software was completed, modifications needed to be made to the code during testing. Now that the automated testing process is understood, code can be implemented with testing in mind (reducing the need for software modifications to be made during testing).
+
+<br>
+
+## How test plan fits the SDLC
 
 - The Software Development Life Cycle (SDLC) of the MusoPlan project follows the iterative Waterfall model, where phases are repeated until the newly developed feature is considered suitable. Once the feature is successfully completed the project moves sequentially onto the next phase.
 - This model enables more flexibility and adaptability compated to the otherwise rigid Waterfall structure.
@@ -15,8 +22,8 @@
 
 <br>
 
-## How your test cases relate to the requirements identified in activity 1
-The testing requirements that were identified in activity 1 were:
+## How test cases relate to the requirements identified in activity 1
+The testing requirements that were identified in activity 1 were complied with:
 
 - All automated testing is to be done using Jest, and must have over 75% coverage of functions.
 > This was achieved (100% coverage of functions)
@@ -45,9 +52,3 @@ The test progress report can be accessed [here](./testProgressReport.md).
     - Adding GUI to improve UX
     - Modifying code to ensure maximum efficiency
     - Adding more functions to the application
-
-<br>
-
-*Add the minutes of the meeting to the test directory in your MusoPlan repository, and ensure all your testing related branches have been merged back into the main branch in compliance with organisational requirements.*
-
-*Submit a zip of your MusoPlan repository via the Learning Management System.*
